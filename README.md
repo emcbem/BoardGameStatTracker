@@ -69,15 +69,15 @@ To complete this project there are some main task that will need to be completed
 - 0/5: Toasts / global notifications or alerts
 - 0/5: Error handling (both on API requests and render errors)
 - 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
+- **5/5: Developer type helping (TypeScript)**
 - 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
+- **3/5: CI/CD pipeline**
 - 0/5: Tests run in pipeline, pipeline aborts if they fail
 - 0/5: Linting in pipeline
 - 0/9: 3+ reusable form input components
 - 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- **7/10: Authentication and user account support**
+- **2/5: Authorized pages and public pages**
 
 ## Nov 9
 
@@ -94,90 +94,91 @@ To complete this project there are some main task that will need to be completed
 - 0/5: Toasts / global notifications or alerts
 - 0/5: Error handling (both on API requests and render errors)
 - 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
+- 5/5: Developer type helping (TypeScript)
 - 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
+- **5/5: CI/CD pipeline**
+- **5/5: Tests run in pipeline, pipeline aborts if they fail**
+- **5/5: Linting in pipeline**
 - 0/9: 3+ reusable form input components
 - 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- 7/10: Authentication and user account support
+- 2/5: Authorized pages and public pages
 
 ## Nov 13
 
 #### To-Do Items 
 
 - [ ] Page to view all board games
-- [ ] Page to view a specific game
+- [ ] Toast setup to display errors and certain success messages
 - [ ] Home page 
 
 #### Rubric Items Hit
 
 - 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
+- **3/5: Client-side state stores (e.g., context or React Query)**
+- **5/5: Toasts / global notifications or alerts**
+- **5/5: Error handling (both on API requests and render errors)**
+- **3/5: Network Calls; Read data, Write data, WebSocket**
+- 5/5: Developer type helping (TypeScript)
+- **2/5: 10+ pages/views via a router**
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
 - 0/9: 3+ reusable form input components
 - 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- 7/10: Authentication and user account support
+- 2/5: Authorized pages and public pages
 
 ## Nov 16
 
 #### To-Do Items 
 
 - [ ] Page to view collection of games
+- [ ] Page to view a specific game
 - [ ] Able to add games into collection
-- [ ] About us page
+
 
 #### Rubric Items Hit
 
 - 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
+- 3/5: Client-side state stores (e.g., context or React Query)
+- 5/5: Toasts / global notifications or alerts
+- 5/5: Error handling (both on API requests and render errors)
+- **5/5: Network Calls; Read data, Write data, WebSocket**
+- 5/5: Developer type helping (TypeScript)
+- **3/5: 10+ pages/views via a router**
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
 - 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- **6/12: 4+ reusable layout components** (Board game components)
+- **10/10: Authentication and user account support** (User collections
+- 2/5: Authorized pages and public pages
 
 ## Nov 20
 
 #### To-Do Items 
 
-- [ ] Able to input a "play" of a board game
+- [ ] Page to play and instance of a game
 - [ ] Add friend page
 - [ ] View friends page
 
 #### Rubric Items Hit
 
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- **5/5: Use of Local Storage** (Store current play of game in local storage, if they refresh, i want it to stay.)
+- **5/5: Client-side state stores (e.g., context or React Query)**
+- 5/5: Toasts / global notifications or alerts
+- 5/5: Error handling (both on API requests and render errors)
+- 5/5: Network Calls; Read data, Write data, WebSocket
+- 5/5: Developer type helping (TypeScript)
+- **4/5: 10+ pages/views via a router**
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
+- **9/9: 3+ reusable form input components**
+- **12/12: 4+ reusable layout components**
+- 10/10: Authentication and user account support
+- **5/5: Authorized pages and public pages**
 
 ## Nov 23
 
@@ -185,24 +186,24 @@ To complete this project there are some main task that will need to be completed
 
 - [ ] Able to tie other users to a "play" of a boardgame. 
 - [ ] Only able to tie users to a "play" of a board game if they are friends
-- [ ] Page to play and instance of a game
+
 
 #### Rubric Items Hit
 
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- 5/5: Use of Local Storage
+- 5/5: Client-side state stores (e.g., context or React Query)
+- 5/5: Toasts / global notifications or alerts
+- 5/5: Error handling (both on API requests and render errors)
+- 5/5: Network Calls; Read data, Write data, WebSocket
+- 5/5: Developer type helping (TypeScript)
+- 4/5: 10+ pages/views via a router
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
+- 9/9: 3+ reusable form input components
+- 12/12: 4+ reusable layout components
+- 10/10: Authentication and user account support
+- 5/5: Authorized pages and public pages
 
 ## Nov 26
 
@@ -214,41 +215,42 @@ To complete this project there are some main task that will need to be completed
 
 #### Rubric Items Hit
 
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- 5/5: Use of Local Storage
+- 5/5: Client-side state stores (e.g., context or React Query)
+- 5/5: Toasts / global notifications or alerts
+- 5/5: Error handling (both on API requests and render errors)
+- 5/5: Network Calls; Read data, Write data, WebSocket
+- 5/5: Developer type helping (TypeScript)
+- **5/5: 10+ pages/views via a router**
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
+- 9/9: 3+ reusable form input components
+- 12/12: 4+ reusable layout components
+- 10/10: Authentication and user account support
+- 5/5: Authorized pages and public pages
 
 ## Dec 4
 
 #### To-Do Items 
 
-- [ ] Toast setup to display errors and certain success messages
+
 - [ ] Webhook to have popups show up when someone sends a friend request
+- [ ] About us page
 
 #### Rubric Items Hit
 
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 0/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- 0/5: CI/CD pipeline
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 0/10: Authentication and user account support
-- 0/5: Authorized pages and public pages
+- 5/5: Use of Local Storage
+- 5/5: Client-side state stores (e.g., context or React Query)
+- 5/5: Toasts / global notifications or alerts
+- 5/5: Error handling (both on API requests and render errors)
+- 5/5: Network Calls; Read data, Write data, WebSocket
+- 5/5: Developer type helping (TypeScript)
+- 5/5: 10+ pages/views via a router
+- 5/5: CI/CD pipeline
+- 5/5: Tests run in pipeline, pipeline aborts if they fail
+- 5/5: Linting in pipeline
+- 9/9: 3+ reusable form input components
+- 12/12: 4+ reusable layout components
+- 10/10: Authentication and user account support
+- 5/5: Authorized pages and public pages
