@@ -1,11 +1,11 @@
 # BoardGameStatTracker
 
 ## Elevator Pitch
-The main idea is a way to keep track of all the times I play board games with my fiance. 
-I want to know who wins the most for specific games.
-I want to be able to pick a random game to play based on a criteria that I specify.
-I also want to make it so that you can link other users to an instance of a board game getting played. 
-So you can keep other users updated on games you played with them. 
+The main idea is a way to keep track of all the times I play board games with my fiance.  
+I want to know who wins the most for specific games.  
+I want to be able to pick a random game to play based on a criteria that I specify.  
+I also want to make it so that you can link other users to an instance of a board game getting played.  
+So you can keep other users updated on games you played with them.  
 
 ## Creator
 - Ethan
