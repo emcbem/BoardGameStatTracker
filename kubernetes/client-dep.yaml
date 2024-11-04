@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-game-stat-tracker-client-dep
+  namespace: bgst
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: board-game-stat-tracker-client
+  template:
+    metadata:
+      labels:
+        app: board-game-stat-tracker-client
+    spec:
+      containers:
+        - name: board-game-stat-tracker-client-container
+          image: codebras/board-game-stat-tracker:${GITHUB_RUN_ID} 
+          ports:
+            - containerPort: 80

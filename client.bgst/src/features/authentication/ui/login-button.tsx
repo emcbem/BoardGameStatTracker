@@ -21,7 +21,7 @@ export default function LoginLogoutButton() {
   if (auth.isAuthenticated) {
     return (
       <button
-        className="text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50 px-3 py-2 rounded-md text-sm font-medium"
+        className="underline text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50 px-3 py-2 rounded-md text-sm font-medium"
         onClick={() => {
           document.cookie = "jwt_token=;";
           auth.removeUser();
