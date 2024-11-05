@@ -1,6 +1,6 @@
 import { useAuth } from "react-oidc-context";
 
-export default function LoginLogoutButton() {
+export default function LoginButton() {
   const auth = useAuth();
 
   switch (auth.activeNavigator) {

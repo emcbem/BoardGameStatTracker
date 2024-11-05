@@ -1,5 +1,5 @@
 import "./App.css";
-import LoginLogoutButton from "./features/authentication/ui/login-button";
+import LoginButton from "./features/authentication/ui/login-button";
 import { CustomAuthProvider } from "./features/authentication/services/auth-provider";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <CustomAuthProvider>
-        <LoginLogoutButton></LoginLogoutButton>
+        <LoginButton></LoginButton>
       </CustomAuthProvider>
     </>
   );
