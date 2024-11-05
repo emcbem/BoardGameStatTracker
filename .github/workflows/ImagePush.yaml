@@ -22,7 +22,7 @@ jobs:
       - name: Build and push server image
         run: | 
           docker build -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:${{ github.run_number}} \
-          -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:latest .
+          -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:latest ./client.bgst/.
           docker push ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker --all-tags
 
       - name: Reapply Kube files
