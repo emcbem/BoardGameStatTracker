@@ -3,7 +3,7 @@ import { AuthProvider, AuthProviderProps } from "react-oidc-context";
 
 const oidcConfig: AuthProviderProps = {
   authority: "https://auth.snowse.duckdns.org/realms/advanced-frontend/",
-  client_id: "ethan-class-demo",
+  client_id: "bgst-client-id",
   redirect_uri: process.env.NODE_ENV == "production" ? "" : "http://localhost:5173/" ,
   onSigninCallback: async (user) => {
     console.log("Signed in callback");
