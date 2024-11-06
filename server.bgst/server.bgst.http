@@ -1,0 +1,6 @@
+@server.bgst_HostAddress = http://localhost:5184
+
+GET {{server.bgst_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
