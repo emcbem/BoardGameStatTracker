@@ -17,3 +17,13 @@ spec:
                 name: board-game-stat-tracker-client-service
                 port:
                   number: 80
+    - host: api.bgst.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: board-game-stat-tracker-server-service
+                port: 
+                  number: 8080
