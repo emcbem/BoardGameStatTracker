@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using server.bgst.Data;
+using server.bgst.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
+
+builder.Services.AddSingleton<BoardGameService>();
 
 builder.Services.AddDbContextFactory<BgstContext>(p =>
     p.UseNpgsql(

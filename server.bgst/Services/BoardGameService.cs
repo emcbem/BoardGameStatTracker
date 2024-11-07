@@ -14,4 +14,10 @@ public class BoardGameService
         this.dbContextFactory = dbContextFactory;
     }
 
+    public async Task<List<BoardGame>> GetTop50Games()
+    {
+        using var context = await dbContextFactory.CreateDbContextAsync();
+        return await context.BoardGames.Take(50).ToListAsync();
+    }
+
 }
