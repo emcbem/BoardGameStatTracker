@@ -18,3 +18,6 @@ spec:
           image: codebras/board-game-stat-tracker-server:${GITHUB_RUN_ID} 
           ports:
             - containerPort: 8080
+          env:
+          - name: BGST_CONN
+            value: ${DB_CONN}

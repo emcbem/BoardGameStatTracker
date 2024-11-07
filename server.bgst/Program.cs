@@ -13,19 +13,15 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<BoardGameService>();
 
 builder.Services.AddDbContextFactory<BgstContext>(p =>
-    p.UseNpgsql(
-        builder.Configuration["BGST_CONN"]
-    )
+	p.UseNpgsql(
+		builder.Configuration["BGST_CONN"]
+	)
 );
 
 var app = builder.Build();
 
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.MapControllers();
 
