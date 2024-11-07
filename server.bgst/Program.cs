@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 
-builder.Services.AddSingleton<BoardGameService>();
+builder.Services.AddScoped<BoardGameService>();
 
 builder.Services.AddDbContextFactory<BgstContext>(p =>
 	p.UseNpgsql(
