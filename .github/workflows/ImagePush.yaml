@@ -23,6 +23,7 @@ jobs:
         run: | 
           cd ./client.bgst/
 
+          npm install
           npm run lint
 
           docker build -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:${{ github.run_number}} \
