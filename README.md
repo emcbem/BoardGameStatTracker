@@ -30,7 +30,7 @@ To complete this project there are some main task that will need to be completed
 - [ ] Linting before deployment
 - [ ] Testing before deployment
 - [ ] User authorization and authentication
-- [ ] Database design to satisfy requierments 
+- [X] Database design to satisfy requierments 
 - [ ] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
 - [ ] Able to add games into collection 
 - [ ] Able to input a "play" of a board game
