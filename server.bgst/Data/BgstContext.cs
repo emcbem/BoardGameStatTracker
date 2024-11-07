@@ -164,8 +164,7 @@ public partial class BgstContext : DbContext
                 .HasConstraintName("user_played_game_played_game_id_fkey");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        base.OnModelCreating(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
