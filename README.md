@@ -83,9 +83,9 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Linting before deployment
-- [ ] Testing before deployment
-- [ ] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
+- [X] Linting before deployment
+- [X] Testing before deployment
+- [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
 
 #### Rubric Items Hit
 
