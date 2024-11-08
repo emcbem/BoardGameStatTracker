@@ -50,4 +50,15 @@ public class BoardGameService
             .Select(x => x.ToBoardGameDto())
             .ToList();
     }
+
+    public async Task UploadGamesFromCsv()
+    {
+        var games = BoardGameCsvParser.ParseBoardGamesFromCsv();
+
+        using var context = await dbContextFactory.CreateDbContextAsync();
+
+        context.AddRange(games);
+
+        await context.SaveChangesAsync();
+    }
 }

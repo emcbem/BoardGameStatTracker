@@ -29,4 +29,10 @@ public class BoardGameController: Controller
     {
         return await boardGameService.SearchGames(searchRequest);
     }
+
+    [HttpGet("Upload")]
+    public async Task UploadGames()
+    {
+        await boardGameService.UploadGamesFromCsv();
+    }
 }
