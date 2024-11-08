@@ -27,11 +27,11 @@ So you can keep other users updated on games you played with them.
 To complete this project there are some main task that will need to be completed. Here is the list of all parts along with the plan of when to complete them. 
 
 - [X] Kubernetes Deployment
-- [ ] Linting before deployment
-- [ ] Testing before deployment
+- [X] Linting before deployment
+- [X] Testing before deployment
 - [ ] User authorization and authentication
 - [X] Database design to satisfy requierments 
-- [ ] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
+- [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
 - [ ] Able to add games into collection 
 - [ ] Able to input a "play" of a board game
 - [ ] Able to tie other users to a "play" of a boardgame. 
