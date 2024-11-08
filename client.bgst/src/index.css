@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  @apply bg-zinc-800
+  @apply bg-swhite-50
 }
