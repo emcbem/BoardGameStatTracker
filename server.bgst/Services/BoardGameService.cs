@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using server.bgst.Data;
 using server.bgst.DTOs;
+using server.bgst.Logic;
 using server.bgst.Requests.GetRequests;
 
 namespace server.bgst.Services;
@@ -38,16 +39,15 @@ public class BoardGameService
 
         var boardGameDtos = await context.BoardGames
             .Where(x => 
-            x.Title.ToLower().Contains(searchRequest.Name.ToLower()) && 
-            x.MaxEstimatedPlayTimeMinutes <= searchRequest.MaxPlayTime &&
-            x.MinEstimatedPlayTimeMinutes >= searchRequest.MinPlayTime &&
-            x.MinPlayers >= searchRequest.MinPlayers &&
-            x.MaxPlayers <= searchRequest.MaxPlayers
-            ).Skip(searchRequest.Page * searchRequest.PageCount)
+            x.Title.ToLower().Contains(searchRequest.Name.ToLower())).ToListAsync();
+            
+        var filteredGames = BoardGameFilterer.FilterOnPlayers(boardGameDtos, searchRequest.MinPlayers, searchRequest.MaxPlayers);
+        filteredGames = BoardGameFilterer.FilterOnPlayTime(filteredGames, searchRequest.MinPlayTime, searchRequest.MaxPlayTime);
+        
+        return filteredGames
+            .Skip(searchRequest.Page * searchRequest.PageCount)
             .Take(searchRequest.PageCount)
             .Select(x => x.ToBoardGameDto())
-            .ToListAsync();
-
-        return boardGameDtos;
+            .ToList();
     }
 }

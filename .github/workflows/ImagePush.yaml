@@ -32,6 +32,8 @@ jobs:
 
       - name: Build and push server image
         run: | 
+          dotnet test ./test.bgst/
+          
           docker build -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker-server:${{ github.run_number}} \
           -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker-server:latest ./server.bgst/.
           docker push ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker-server --all-tags
