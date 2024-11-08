@@ -1,20 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "./src/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/*.{js,ts,jsx,tsx}",
+    "./src/features/**/ui/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        background: {
+        darkness: {
           950: "hsl(180, 9%, 4%)",
-          900: "hsl(165, 10%, 7%)",
-          800: "hsl(167, 8%, 11%)",
-          700: "hsl(171, 9%, 15%)",
-          600: "hsl(173, 9%, 18%)",
-          500: "hsl(174, 8%, 22%)",
-          400: "hsl(172, 4%, 36%)",
-          300: "hsl(170, 2%, 50%)",
-          200: "hsl(168, 2%, 64%)",
-          100: "hsl(180, 1%, 78%)",
+          900: "hsl(180, 9%, 8%)",
+          800: "hsl(169, 8%, 13%)",
+          700: "hsl(172, 8%, 17%)",
+          600: "hsl(174, 8%, 22%)",
+          500: "hsl(180, 4%, 33%)",
+          400: "hsl(180, 3%, 45%)",
+          300: "hsl(180, 2%, 57%)",
+          200: "hsl(180, 2%, 68%)",
+          100: "hsl(180, 1%, 80%)",
           50: "hsl(180, 2%, 91%)",
         },
         red: {

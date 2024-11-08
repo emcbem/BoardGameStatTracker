@@ -1,13 +1,15 @@
 import "./App.css";
-import LoginButton from "./features/authentication/ui/login-button";
 import { CustomAuthProvider } from "./features/authentication/services/auth-provider";
+import { Pages } from "./features/router/ui/Pages";
+import Navbar from "./features/navbar/ui/Navbar";
 
 function App() {
 
   return (
     <>
       <CustomAuthProvider>
-        <LoginButton></LoginButton>
+        <Navbar/>
+        <Pages/>
       </CustomAuthProvider>
     </>
   );
