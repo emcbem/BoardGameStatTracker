@@ -18,4 +18,17 @@ public static class DtoConverter
             DatePublished = boardGame.DatePublished,
         };
     }
+
+    public static UserDto ToUserDto(this BgstUser user)
+    {
+        return new UserDto
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            Imageurl = user.Imageurl,
+            Friendcode = user.Friendcode,
+        };
+    }
+
 }

@@ -1,4 +1,5 @@
 import  { useState } from "react";
+import LoginButton from "../../authentication/ui/login-button";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ function Navbar() {
                 <a href="#" className="text-darkness-200 hover:text-darkness-50 hover:bg-darkness-600 px-3 py-2 rounded-md text-sm font-medium">
                   Contact
                 </a>
+                <LoginButton></LoginButton>
               </div>
             </div>
           </div>

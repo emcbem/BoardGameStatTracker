@@ -9,11 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<BoardGameService>();
+builder.Services.AddScoped<UserService>();
+
 
 builder.Services.AddDbContextFactory<BgstContext>(p =>
 	p.UseNpgsql(
@@ -21,24 +24,27 @@ builder.Services.AddDbContextFactory<BgstContext>(p =>
 	)
 );
 
-// builder.Services.AddAuthentication(options =>
-//     {
-//         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//     }).AddJwtBearer(options => {
-//         options.TokenValidationParameters = new TokenValidationParameters
-//         {
-//             ValidateIssuer = true,
-//             ValidateAudience = true,
-//             ValidateLifetime = true,
-//             ValidateIssuerSigningKey = true,
-//             ValidIssuer = "your_issuer",
-//             ValidAudience = "your_audience",
-//             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key"))
-//         };
-//     });
+builder.Services.AddAuthentication("Bearer")
+	.AddJwtBearer("Bearer", options =>
+	{
+		options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend";
+		options.Audience = "bgst-client-id";
+		// options.TokenValidationParameters = new TokenValidationParameters
+		// {
+		// 	ValidAudience = "bgst-client-id"
+		// };
+	});
 
 var app = builder.Build();
+
+app.UseCors(p =>
+p
+	.AllowAnyHeader()
+	.AllowAnyMethod()
+	.AllowAnyOrigin());
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseSwagger();
 app.UseSwaggerUI();
