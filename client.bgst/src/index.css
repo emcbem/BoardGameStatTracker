@@ -5,8 +5,9 @@
 @tailwind utilities;
 
 
-body {
-  @apply bg-swhite-50
+#root {
+  @apply bg-darkness-50;
+  @apply min-h-screen;
 }
 
 * {

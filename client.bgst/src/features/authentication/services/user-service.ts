@@ -12,10 +12,3 @@ export const callAuthEndpoint = async (id_token: string) =>
     console.log(response);
     return response.data
 }
-
-export const callPublicEndpoint = async () =>
-    {
-        const response = await axios.get(baseUrl + "/boardgame/gettop50games")
-        console.log(response);
-        return response.data
-    }

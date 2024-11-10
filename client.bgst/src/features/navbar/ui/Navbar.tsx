@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Links } from "./Links";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ function Navbar() {
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="text-darkness-50 text-2xl bgst-text ">BGST</div>
+            <Link to="/" className="text-darkness-50 text-2xl bgst-text ">BGST</Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <Links></Links>

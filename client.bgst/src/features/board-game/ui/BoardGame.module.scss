@@ -1,0 +1,16 @@
+
+.inset-container {
+  width: 300px;
+  padding: 1px; /* Padding around the image to create space */
+  border: 2px solid theme('colors.darkness.100'); /* Light border around the container */
+  border-radius: 8px; /* Optional: Rounded corners for a more subtle inset effect */
+  box-shadow: inset 4px 4px theme('colors.darkness.100'); /* Inset shadow to create depth */
+  overflow: hidden; /* Ensures the image doesn't spill out of the container */
+}
+
+.inset-image {
+  width: 300px; /* Image fills the width of the container */
+  height: 300px; /* Image fills the height of the container */
+  object-fit: cover; /* Ensures the image covers the container area, cropping if necessary */
+  border-radius: 6px; /* Optional: Round the image's corners to match the container */
+}
