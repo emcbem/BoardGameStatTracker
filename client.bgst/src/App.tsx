@@ -12,7 +12,10 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <CustomAuthProvider>
           <Navbar />
-          <Pages />
+          <br/>
+          <div className="mx-auto px-4 max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+            <Pages />
+          </div>
         </CustomAuthProvider>
       </QueryClientProvider>
     </>

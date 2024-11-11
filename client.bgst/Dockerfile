@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package.json .
 RUN NODE_ENV=development npm i
 COPY . .
+ENV VITE_URL "https://api.bgst.duckdns.org"
 RUN npm run build
 
 FROM nginx:1.27.0

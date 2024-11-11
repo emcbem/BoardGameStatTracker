@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { Links } from "./Links";
 import { Link } from "react-router-dom";
+import { Logo } from "../../logo/ui/Logo";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-darkness-700">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-darkness-700 ">
+      <div className=" mx-auto px-4 max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-darkness-50 text-2xl bgst-text ">BGST</Link>
+            <Link to="/" className="text-darkness-50 text-2xl bgst-text ">
+              <div className="w-[30px]">
+                <Logo />
+              </div>
+            </Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <Links></Links>
