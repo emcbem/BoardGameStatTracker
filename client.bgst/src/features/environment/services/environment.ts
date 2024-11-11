@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: import.meta.env.VITE_URL ?? "https://localhost:7095"
+    apiUrl: import.meta.env.VITE_URL ?? "http://localhost:5184"
 }
