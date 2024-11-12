@@ -25,6 +25,9 @@ jobs:
 
           npm install
           npm run lint
+          cd ./src/features/
+          ls -la
+          cd ../../
 
           docker build -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:${{ github.run_number}} \
           -t ${{ secrets.DOCKER_USERNAME }}/board-game-stat-tracker:latest .
