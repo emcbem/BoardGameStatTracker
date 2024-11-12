@@ -7,6 +7,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'scroll-x': 'scroll-x 1000s linear infinite', // 15s duration, adjust as needed
+      },
+      keyframes: {
+        'scroll-x': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
       colors: {
         darkness: {
           950: "hsl(180, 9%, 4%)",

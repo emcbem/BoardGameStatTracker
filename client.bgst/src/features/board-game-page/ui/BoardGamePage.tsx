@@ -1,78 +1,60 @@
-import { useAuth } from "react-oidc-context";
-import { callAuthEndpoint } from "../../authentication/services/user-service";
-import { useEffect, useRef, useState } from "react";
-import { BoardGameQueries } from "../../board-game/tan-stack/BoardGameQueries";
-import { BoardGameCard } from "../../board-game/ui/BoardGameCard";
+import {
+  AdjustmentsHorizontalIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/16/solid";
+import { ScrollingGames } from "./ScrollingGames";
+import { SearchForGame } from "./SearchForGame";
 
 export const BoardGamePage = () => {
-  const auth = useAuth();
-  useEffect(() => {
-    if (auth.user?.id_token) {
-      callAuthEndpoint(auth.user?.id_token);
-    }
-  }, [auth.user?.id_token]);
-
-  const { data, isLoading } = BoardGameQueries.useGetTop50Games();
-
-  const carouselRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (data) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === data!.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000); // Change every 3 seconds
-
-      return () => clearInterval(interval); // Clear interval on component unmount
-    }
-  }, [data]);
-
-  // Carousel item style to translate based on index
-  const getTranslateStyle = () => ({
-    transform: `translateX(-${currentIndex * 100}%)`,
-    transition: "transform 0.5s ease-in-out",
-  });
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
   return (
     <div>
-      <section className="bg-white py-8 px-4">
+      <section id="header" className="bg-swhite-100 py-8 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Search for Board Games
+          <h2 className="text-3xl text-center mb-4 text-swhite-900">
+            Search through thousands of games!
           </h2>
           <div className="flex justify-center">
-            <input
-              type="text"
-              placeholder="Search board games..."
-              className="w-full md:w-1/2 p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-blue-500"
-            />
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-r-lg hover:bg-blue-600">
-              Search
-            </button>
+            <SearchForGame/>
           </div>
         </div>
       </section>
-      <div className="relative overflow-hidden">
-          <div
-            ref={carouselRef}
-            className="flex"
-            style={getTranslateStyle()}
-          >
-            {data && data.map((item) => (
-              <div key={item.id} className="min-w-full flex-shrink-0">
-                <div className="bg-gray-200 p-6 rounded-lg shadow-md text-center">
-                  <BoardGameCard boardGame={item}/>
-                </div>
-              </div>
-            ))}
+      
+      <ScrollingGames/>
+
+      <section className="bg-swhite-100 py-8 px-4">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-center space-x-2 pb-5">
+            <div className="w-[30px] h-[30px]">
+              <MagnifyingGlassIcon className="fill-swhite-900" />
+            </div>
+            <h2 className="text-3xl text-swhite-900">Find Fan Favorites</h2>
           </div>
+
+          <p className="text-center">
+            Discover what everyone’s loving! Our Fan Favorites showcase the most
+            popular picks, loved and rated highly by fans just like you. Explore
+            trending items, top-rated choices, and seasonal must-haves to find
+            your next favorite today!
+          </p>
         </div>
+      </section>
+      <section className="bg-swhite-200 py-8 px-4">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-center space-x-2 pb-5">
+            <h2 className="text-3xl text-swhite-900">Sort by many filters</h2>
+            <div className="w-[30px] h-[30px]">
+              <AdjustmentsHorizontalIcon className="fill-swhite-900" />
+            </div>
+          </div>
+          <p className="text-center">
+            Find exactly what you're looking for with advanced sorting! Filter
+            games by category, difficulty, playtime, age range, or number of
+            players to match your perfect play style. Whether you’re after a
+            quick solo game or a challenging strategy for game night, our
+            filters help you discover just the right fit.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

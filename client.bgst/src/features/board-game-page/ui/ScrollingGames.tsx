@@ -1,0 +1,26 @@
+import { BoardGameQueries } from "../../board-game/tan-stack/BoardGameQueries";
+import { BoardGameCard } from "../../board-game/ui/BoardGameCard";
+
+export const ScrollingGames = () => {
+  const { data } = BoardGameQueries.useGetTop50Games();
+
+  return (
+    <section id="scrolling">
+      <div className="relative overflow-hidden">
+        <div
+          className="flex animate-scroll-x bg-repeat-x gap-3 pt-3 pb-3 bg-swhite-300"
+          style={{ width: `${(data ? data.length : 1) * 100}%` }}
+        >
+          {data &&
+            data.map((item) => (
+              <div key={item.id} className="flex-shrink-0">
+                <div className="bg-swhite-200 p-6 rounded-lg shadow-md text-center">
+                  <BoardGameCard boardGame={item} />
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};
