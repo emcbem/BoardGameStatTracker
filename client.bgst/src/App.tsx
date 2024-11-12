@@ -12,10 +12,12 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <CustomAuthProvider>
           <Navbar />
-          <br/>
-          <div className="mx-auto px-4 max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+          <div className="mx-auto w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg min-h-screen">
             <Pages />
           </div>
+          <footer className="bg-darkness-900 text-darkness-50 text-center py-4">
+            <p>&copy; 2024 BoardGameStat Tracker. All rights reserved.</p>
+          </footer>
         </CustomAuthProvider>
       </QueryClientProvider>
     </>

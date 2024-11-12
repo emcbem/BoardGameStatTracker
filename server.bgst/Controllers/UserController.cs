@@ -21,16 +21,7 @@ public class UserController : Controller
     [Authorize]
     public async Task<UserDto?> GetProfile()
     {
-        var email = User.FindFirst(ClaimTypes.Email)?.Value;
-
-        var user = await userService.GetUserByEmail(email ?? "");
-
-        if (user == null)
-        {
-            user = await userService.AddUser( User?.Claims.FirstOrDefault(x => x.Type == "name")?.Value ?? "", email!);
-        }
-
-        return user;
+        return await userService.GetUserFromClaims(User);
     }
 
 }

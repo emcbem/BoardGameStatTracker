@@ -27,12 +27,15 @@ builder.Services.AddDbContextFactory<BgstContext>(p =>
 builder.Services.AddAuthentication("Bearer")
 	.AddJwtBearer("Bearer", options =>
 	{
+		options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = "https://auth.snowse.duckdns.org/realms/advanced-frontend",
+                ValidAudience = "bgst-client-id",
+            };
 		options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend";
-		options.Audience = "bgst-client-id";
-		// options.TokenValidationParameters = new TokenValidationParameters
-		// {
-		// 	ValidAudience = "bgst-client-id"
-		// };
 	});
 
 var app = builder.Build();

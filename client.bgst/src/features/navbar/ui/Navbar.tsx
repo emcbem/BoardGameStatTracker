@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <nav className="bg-darkness-700 ">
-      <div className=" mx-auto px-4 max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+      <div className="mx-auto px-4 max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-darkness-50 text-2xl bgst-text ">

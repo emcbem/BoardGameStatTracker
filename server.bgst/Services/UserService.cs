@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using server.bgst.DTOs;
 using server.bgst.Data;
+using System.Security.Claims;
 
 namespace server.bgst.Services;
 
@@ -38,5 +39,19 @@ public class UserService{
         await context.SaveChangesAsync();
 
         return newUser.ToUserDto();
+    }
+
+    internal async Task<UserDto?> GetUserFromClaims(ClaimsPrincipal user)
+    {
+        var email = user.FindFirst(ClaimTypes.Email)?.Value;
+
+        var foundUser = await GetUserByEmail(email ?? "");
+
+        if (foundUser == null)
+        {
+            foundUser = await AddUser(user?.Claims.FirstOrDefault(x => x.Type == "name")?.Value ?? "", email!);
+        }
+
+        return foundUser;
     }
 }

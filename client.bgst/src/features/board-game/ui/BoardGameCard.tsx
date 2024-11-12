@@ -3,14 +3,16 @@ import classes from "./BoardGame.module.scss";
 
 export const BoardGameCard = ({ boardGame }: { boardGame: BoardGame }) => {
   return (
-    <div className="w-[300px]">
-      <div className={`${classes["inset-container"]}`}>
-        <img
-          src={boardGame.imageUrl}
-          className={`${classes["inset-image"]}`}
-        ></img>
-      </div>
-      <span className="break-words">{boardGame.title}</span>
-    </div>
+    <div>
+
+    <div className={''}>
+      <img
+        src={boardGame.imageUrl}
+        alt={boardGame.title}
+        className={`w-full h-[500px] rounded-full mb-4 object-contain  ${classes['inset-image']}`}
+        />
+        </div>
+      <h4 className="text-xl mb-2">{boardGame.title}</h4>
+        </div>
   );
 };
