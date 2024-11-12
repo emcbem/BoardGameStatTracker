@@ -6,7 +6,7 @@ export const SearchForGame = () => {
   const [value, setValue] = useState<string>("");
 
   const handleClick = () => {
-    navigate(`/search${value ? "?query=" + value.toString() : ""}`)
+    navigate(`/boardgames/${value ? value.toString() : ""}`)
   }
 
   return (

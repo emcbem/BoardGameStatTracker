@@ -23,7 +23,7 @@ public class BoardGameService
         return await context.BoardGames.Take(50).Select(x => x.ToBoardGameDto()).ToListAsync();
     }
 
-    public async Task<List<BoardGameDto>> SearchGames(SearchRequest searchRequest)
+    public async Task<Page<BoardGameDto>> SearchGames(SearchRequest searchRequest)
     {
         using var context = await dbContextFactory.CreateDbContextAsync();
         
@@ -44,11 +44,24 @@ public class BoardGameService
         var filteredGames = BoardGameFilterer.FilterOnPlayers(boardGameDtos, searchRequest.MinPlayers, searchRequest.MaxPlayers);
         filteredGames = BoardGameFilterer.FilterOnPlayTime(filteredGames, searchRequest.MinPlayTime, searchRequest.MaxPlayTime);
         
-        return filteredGames
+        var totalCount = filteredGames.Count();
+
+        var boardGames = filteredGames
             .Skip(searchRequest.Page * searchRequest.PageCount)
             .Take(searchRequest.PageCount)
             .Select(x => x.ToBoardGameDto())
             .ToList();
+        
+        var itemsLeft = totalCount - (searchRequest.Page + 1) * searchRequest.PageCount;
+
+        var hasNextPage = !(itemsLeft <= 0);
+
+        return new Page<BoardGameDto>(){
+            pageNumber = searchRequest.Page,
+            data = boardGames,
+            hasNextPage = hasNextPage,
+            totalCount = totalCount
+        };
     }
 
     public async Task UploadGamesFromCsv()

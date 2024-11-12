@@ -25,7 +25,7 @@ public class BoardGameController: Controller
     }
 
     [HttpPost("SearchGames")]
-    public async Task<List<BoardGameDto>> SearchGames([FromBody] SearchRequest searchRequest)
+    public async Task<Page<BoardGameDto>> SearchGames([FromBody] SearchRequest searchRequest)
     {
         return await boardGameService.SearchGames(searchRequest);
     }
