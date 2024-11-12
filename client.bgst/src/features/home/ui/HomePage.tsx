@@ -2,8 +2,9 @@ import {
   AdjustmentsHorizontalIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/16/solid";
-import { ScrollingGames } from "./ScrollingGames";
 import { SearchForGame } from "./SearchForGame";
+import { ScrollingGames } from "./ScrollingGames";
+
 
 export const HomePage = () => {
   return (

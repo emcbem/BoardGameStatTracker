@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { AboutUsPage } from "../../aboutus/ui/AboutUsPage"
-import { HomePage } from "../../Home/ui/HomePage"
+import { HomePage } from "../../home/ui/HomePage"
 
 
 export const Pages = () => {
