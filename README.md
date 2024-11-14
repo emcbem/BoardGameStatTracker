@@ -43,12 +43,11 @@ To complete this project there are some main task that will need to be completed
 - [ ] Page to play and instance of a game
 - [ ] Page to view collection of games
 - [ ] Page to view a specific game
-- [ ] Page to view all board games
-- [ ] Search games page
+- [X] Page to view all board games
 - [ ] Add friend page
 - [ ] View friends page
-- [ ] About us page
-- [ ] Home page 
+- [X] About us page
+- [X] Home page 
 
 #### Things to keep track of all the time while developing
   - all experiences mobile friendly
@@ -108,9 +107,9 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Page to view all board games
-- [ ] Toast setup to display errors and certain success messages
-- [ ] Home page 
+- [X] Page to view all board games
+- [X] Toast setup to display errors and certain success messages
+- [X] Home page 
 
 #### Rubric Items Hit
 
@@ -209,7 +208,7 @@ To complete this project there are some main task that will need to be completed
 
 - [ ] Page to choose a random game from your favorites.
 - [ ] Stats for how well you play a game are in the specific game page
-- [ ] Search games page
+- [ ] Touch-ups
 
 #### Rubric Items Hit
 
@@ -233,7 +232,7 @@ To complete this project there are some main task that will need to be completed
 #### To-Do Items 
 
 - [ ] Webhook to have popups show up when someone sends a friend request
-- [ ] About us page
+- [ ] Touch-ups
 
 #### Rubric Items Hit
 
