@@ -31,4 +31,14 @@ public static class DtoConverter
         };
     }
 
+    public static CollectionDto ToCollectionDto(this Collection collection)
+    {
+        return new CollectionDto
+        {
+            Id = collection.Id,
+            DateAdded = collection.DateAdded,
+            BoardGame = collection.BoardGame?.ToBoardGameDto(),
+        };
+    }
+
 }

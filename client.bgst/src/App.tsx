@@ -3,13 +3,14 @@ import { CustomAuthProvider } from "./features/authentication/services/auth-prov
 import { Pages } from "./features/router/ui/Pages";
 import Navbar from "./features/navbar/ui/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
 const queryClient = new QueryClient();
 
 function App() {
   function fallbackRender({ error }: FallbackProps) {
+    toast.error("Something went wrong")
     return (
       <div role="alert">
         <p>Something went wrong:</p>

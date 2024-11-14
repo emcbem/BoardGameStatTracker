@@ -22,7 +22,7 @@ public class UserService{
         return user?.ToUserDto() ?? null;
     }
 
-    internal async Task<UserDto> AddUser(string name, string email)
+    private async Task<UserDto> AddUser(string name, string email)
     {
         using var context = await dbContextFactory.CreateDbContextAsync();
 
@@ -41,7 +41,7 @@ public class UserService{
         return newUser.ToUserDto();
     }
 
-    internal async Task<UserDto?> GetUserFromClaims(ClaimsPrincipal user)
+    public async Task<UserDto?> GetUserFromClaims(ClaimsPrincipal user)
     {
         var email = user.FindFirst(ClaimTypes.Email)?.Value;
 

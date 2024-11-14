@@ -34,5 +34,18 @@ export const BoardGameService = {
             console.log("Was unable to search games");
             throw Error("Unable to search games")
         }
-    }
+    },
+    GetGameById: async (gameId: number): Promise<BoardGame> => {
+        try{
+            const response = await axios.get<BoardGame>(
+                `${environment.apiUrl}/${boardGameEndpointName}/GetBoardGameById/${gameId}`
+            );
+            return response.data
+        }
+        catch 
+        {
+            console.log(`Was unable to get game for id: ${gameId}`);
+            throw Error(`Unable to get game for id: ${gameId}`)
+        }
+    },
 }

@@ -30,6 +30,12 @@ public class BoardGameController: Controller
         return await boardGameService.SearchGames(searchRequest);
     }
 
+    [HttpGet("GetBoardGameById/{id}")]
+    public async Task<BoardGameDto?> GetBoardGame(int id)
+    {
+        return await boardGameService.GetBoardGameById(id);
+    }
+
     [HttpGet("Upload")]
     public async Task UploadGames()
     {

@@ -83,6 +83,12 @@ public class BoardGameService
         };
     }
 
+    public async Task<BoardGameDto?> GetBoardGameById(int id){
+        using var context = await dbContextFactory.CreateDbContextAsync();
+
+        return (await context.BoardGames.FirstOrDefaultAsync(x => x.Id == id))?.ToBoardGameDto() ?? null;
+    }
+
     public async Task UploadGamesFromCsv()
     {
         var games = BoardGameCsvParser.ParseBoardGamesFromCsv();

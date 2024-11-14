@@ -10,7 +10,7 @@ import { BoardGameService } from "../services/BoardGame";
 import { BoardGameKeys } from "../tan-stack/BoardGameKeys";
 import { SearchRequest } from "../types/search-request";
 
-export const BoardGamePage = () => {
+export const BoardGameSearchPage = () => {
   const { query } = useParams();
 
   const searchRequestController = useSearchRequest(query);
