@@ -46,7 +46,26 @@ public class BoardGameService
         
         var totalCount = filteredGames.Count();
 
-        var boardGames = filteredGames
+        IOrderedEnumerable<BoardGame> orderedGames;
+
+        switch (searchRequest.Order)
+        {
+            //A-Z
+            case 0:
+            default:
+                 orderedGames = filteredGames.OrderBy(y => y.Title);
+                 break;
+            //Z-A
+            case 1:
+                orderedGames = filteredGames.OrderByDescending(y => y.Title);
+                break;
+            //Recent    
+            case 2:
+                orderedGames = filteredGames.OrderByDescending(y => y.DatePublished);
+                break;
+        }
+
+        var boardGames = orderedGames!
             .Skip(searchRequest.Page * searchRequest.PageCount)
             .Take(searchRequest.PageCount)
             .Select(x => x.ToBoardGameDto())

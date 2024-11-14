@@ -9,4 +9,5 @@ public class SearchRequest
     public int MaxPlayers { get; set; }
     public int MinPlayTime { get; set; }
     public int MaxPlayTime { get; set; }
+    public int Order {get; set;}
 }
