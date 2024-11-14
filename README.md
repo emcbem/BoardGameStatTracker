@@ -108,9 +108,9 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Page to view all board games
-- [ ] Toast setup to display errors and certain success messages
-- [ ] Home page 
+- [X] Page to view all board games
+- [X] Toast setup to display errors and certain success messages
+- [X] Home page 
 
 #### Rubric Items Hit
 
