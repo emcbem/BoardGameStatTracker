@@ -28,6 +28,7 @@ public static class DtoConverter
             Email = user.Email,
             Imageurl = user.Imageurl,
             Friendcode = user.Friendcode,
+            CollectionItems = user.Collections?.Select(c => c.ToCollectionDto()).ToList() ?? null
         };
     }
 

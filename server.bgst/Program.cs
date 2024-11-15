@@ -12,9 +12,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();
-
+builder.Services.AddCors();
 
 builder.Services.AddScoped<BoardGameService>();
+builder.Services.AddScoped<CollectionService>();
 builder.Services.AddScoped<UserService>();
 
 
@@ -41,13 +42,11 @@ builder.Services.AddAuthentication("Bearer")
 var app = builder.Build();
 
 app.UseCors(p =>
-p
-	.AllowAnyHeader()
-	.AllowAnyMethod()
-	.AllowAnyOrigin());
+p.AllowAnyHeader()
+ .AllowAnyMethod()
+ .AllowAnyOrigin());
 
 app.UseAuthentication();
-app.UseAuthorization();
 
 app.UseSwagger();
 app.UseSwaggerUI();

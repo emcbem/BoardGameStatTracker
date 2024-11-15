@@ -5,7 +5,8 @@ using System.Security.Claims;
 
 namespace server.bgst.Services;
 
-public class UserService{
+public class UserService
+{
     private IDbContextFactory<BgstContext> dbContextFactory { get; set; }
 
     public UserService(IDbContextFactory<BgstContext> dbContextFactory)
@@ -17,7 +18,11 @@ public class UserService{
     {
         using var context = await dbContextFactory.CreateDbContextAsync();
 
-        var user = await context.BgstUsers.Where(x => x.Email == email).FirstOrDefaultAsync();
+        var user = await context.BgstUsers
+                                .Include(bgu => bgu.Collections)
+                                .ThenInclude(c => c.BoardGame)
+                                .Where(x => x.Email == email)
+                                .FirstOrDefaultAsync();
 
         return user?.ToUserDto() ?? null;
     }

@@ -5,6 +5,8 @@ using server.bgst.Services;
 
 namespace server.bgst.Controllers;
 
+[ApiController]
+[Route("[controller]")]
 public class CollectionController : Controller
 {
     private readonly UserService userService;
@@ -31,10 +33,14 @@ public class CollectionController : Controller
         return collections;
     }
 
-    [HttpPost("addgametocollection/{gameId}")]
-    [Authorize]
+    [HttpGet("addgametocollection/{gameId}")]
     public async Task<CollectionDto?> AddGameToCollection(int gameId)
     {
+        if(User == null || User.Identity?.IsAuthenticated == false )
+        {
+            return null;
+        }
+
         var user = await userService.GetUserFromClaims(User);
 
         if(user == null)

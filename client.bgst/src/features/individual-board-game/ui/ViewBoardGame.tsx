@@ -1,5 +1,8 @@
 import { useParams } from "react-router";
 import { BoardGameQueries } from "../../board-game/tan-stack/BoardGameQueries";
+import { useUserContext } from "../../authentication/hooks/useUserContext";
+import { useAddGameToCollection } from "../../collection/tan-stack/useAddGameToCollection";
+import { useAuth } from "react-oidc-context";
 
 export const ViewBoardGame = () => {
   const { boardgameId } = useParams();
@@ -7,6 +10,21 @@ export const ViewBoardGame = () => {
   const { data: game, isError } = BoardGameQueries.useGetSpecificGame(
     Number.parseInt(boardgameId ?? "")
   );
+
+  const userContext = useUserContext();
+
+  const gameInCollection = () => {
+    const gameExists = userContext.user?.collectionItems?.find(c => c.boardGame.id == game?.id)
+    if(gameExists == undefined)
+    {
+        return false;
+    }
+    return true;
+  }
+
+  const user = useAuth()
+  const addGame = useAddGameToCollection(user.user?.id_token ?? "");
+
 
   if (isError) {
     return (
@@ -23,6 +41,7 @@ export const ViewBoardGame = () => {
     </>
   }
 
+  console.log(userContext.user)
   return (
     <>
       <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xl mx-auto my-10">
@@ -59,9 +78,11 @@ export const ViewBoardGame = () => {
                     </ul>
                 </div>
                 
-                <button className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors">
-                    Add to Wishlist
-                </button>
+                {!gameInCollection() && 
+                    <button onClick={() => addGame.mutate({id_token: user.user?.id_token ?? "", gameId: game.id})} className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors">
+                        Add to Collection
+                    </button>
+                }
             </div>
         </div>
     </>

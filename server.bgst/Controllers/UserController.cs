@@ -18,9 +18,13 @@ public class UserController : Controller
     }
 
     [HttpGet("getUser")]
-    [Authorize]
     public async Task<UserDto?> GetProfile()
     {
+        if(User == null || User.Identity?.IsAuthenticated == false )
+        {
+            return null;
+        }
+
         return await userService.GetUserFromClaims(User);
     }
 

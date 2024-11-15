@@ -11,4 +11,6 @@ public class UserDto
     public string? Imageurl { get; set; }
 
     public string? Friendcode { get; set; }
+
+    public List<CollectionDto>? CollectionItems { get; set; }
 }

@@ -1,15 +1,14 @@
 import axios from "axios";
 import { environment } from "../../environment/services/environment";
+import { User } from "../types/user";
 
 
-export const callAuthEndpoint = async (id_token: string) =>
+export const getUserByIdToken = async (id_token: string) =>
 {
-    console.log(id_token);
-    const response = await axios.get(environment.apiUrl + "/user/getuser", {
+    const response = await axios.get<User>(environment.apiUrl + "/user/getuser", {
         headers: {
-            "Authorization": `Bearer ${id_token}` 
+            Authorization: `Bearer ${id_token}` 
         }
     })
-    console.log(response);
     return response.data
 }
