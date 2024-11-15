@@ -9,6 +9,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { BoardGameService } from "../services/BoardGame";
 import { BoardGameKeys } from "../tan-stack/BoardGameKeys";
 import { SearchRequest } from "../types/search-request";
+import { Link } from "react-router-dom";
 
 export const BoardGameSearchPage = () => {
   const { query } = useParams();
@@ -45,7 +46,8 @@ export const BoardGameSearchPage = () => {
           {data?.pages
             ?.flatMap((page) => page.data)
             .map((boardGame, index) => (
-              <div
+              <Link
+                to={`/view-boardgame/${boardGame.id}`}
                 key={index}
                 className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition flex flex-col"
               >
@@ -53,7 +55,7 @@ export const BoardGameSearchPage = () => {
                   {boardGame.title}
                 </h3>
                 <p className="text-sm text-gray-500">{boardGame.id}</p>
-              </div>
+              </Link>
             ))}
         </div>
 
