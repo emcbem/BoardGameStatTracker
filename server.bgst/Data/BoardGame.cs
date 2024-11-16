@@ -16,8 +16,14 @@ public partial class BoardGame
     public int? MinPlayers { get; set; }
 
     public int? MinEstimatedPlayTimeMinutes { get; set; }
-	public DateTime? DatePublished { get; set; }
+
+	public int? YearPublished { get; set; }
+
 	public int? MaxEstimatedPlayTimeMinutes { get; set; }
+
+    public string? Description {get; set;}
+
+    public int? Age {get; set;}
 
     public virtual ICollection<Collection> Collections { get; set; } = new List<Collection>();
 

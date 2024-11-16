@@ -8,7 +8,7 @@ import { ScrollingGames } from "./ScrollingGames";
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className="mx-auto w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg min-h-screen">
       <section id="header" className="bg-swhite-100 py-8 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl text-center mb-4 text-swhite-900">

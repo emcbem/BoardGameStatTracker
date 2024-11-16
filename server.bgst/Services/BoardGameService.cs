@@ -61,7 +61,7 @@ public class BoardGameService
                 break;
             //Recent    
             case 2:
-                orderedGames = filteredGames.OrderByDescending(y => y.DatePublished);
+                orderedGames = filteredGames.OrderByDescending(y => y.YearPublished);
                 break;
         }
 

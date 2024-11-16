@@ -52,8 +52,11 @@ public partial class BgstContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
 			entity.Property(e => e.MaxEstimatedPlayTimeMinutes).HasColumnName("max_estimated_play_time_minutes");
-            entity.Property(e => e.DatePublished).HasColumnName("date_published");
-            entity.Property(e => e.MinEstimatedPlayTimeMinutes).HasColumnName("min_estimated_play_time_minutes");
+            entity.Property(e => e.YearPublished).HasColumnName("year_published");
+			entity.Property(e => e.Description).HasColumnName("description");
+			entity.Property(e => e.Age).HasColumnName("age");
+
+			entity.Property(e => e.MinEstimatedPlayTimeMinutes).HasColumnName("min_estimated_play_time_minutes");
 			entity.Property(e => e.ImageUrl).HasColumnName("image_url");
             entity.Property(e => e.MaxPlayers).HasColumnName("max_players");
             entity.Property(e => e.MinPlayers).HasColumnName("min_players");

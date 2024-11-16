@@ -18,7 +18,11 @@ public class BoardGameDto
 
 	public int? MaxEstimatedPlayTimeMinutes { get; set; }
 
-	public DateTime? DatePublished { get; set; }
+	public int? YearPublished { get; set; }
 
-    
+    public string? Description { get; set; }
+
+    public int? Age { get; set; }
+
+
 }

@@ -6,95 +6,92 @@ import { useAuth } from "react-oidc-context";
 
 export const ViewBoardGame = () => {
   const { boardgameId } = useParams();
-
   const { data: game, isError } = BoardGameQueries.useGetSpecificGame(
     Number.parseInt(boardgameId ?? "")
   );
-
   const userContext = useUserContext();
-
-  const gameInCollection = () => {
-    const gameExists = userContext.user?.collectionItems?.find(
-      (c) => c.boardGame.id == game?.id
-    );
-    if (gameExists == undefined) {
-      return false;
-    }
-    return true;
-  };
-
   const user = useAuth();
   const addGame = useAddGameToCollection(user.user?.id_token ?? "");
 
-  if (isError) {
-    return (
-      <>
-        <div>Error</div>
-      </>
+  const gameInCollection = () => {
+    return !!userContext.user?.collectionItems?.some(
+      (c) => c.boardGame.id === game?.id
     );
+  };
+
+  if (isError) {
+    return <div>Error</div>;
   }
 
   if (!game) {
-    return <>Loading</>;
+    return <div>Loading...</div>;
   }
 
-  console.log(userContext.user);
   return (
-    <>
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xl mx-auto my-10">
-        <img
-          src={game.imageUrl}
-          alt={game.title}
-          className="w-full h-64 object-cover"
-        />
-        <div className="p-6">
-          <h2 className="text-3xl font-bold text-gray-800">{game.title}</h2>
-          <p className="text-sm text-gray-500 mb-4">
-            Published on: {new Date(game.datePublished).toLocaleDateString()}
-          </p>
-          {/* <p className="text-gray-700 mb-4">{game.description}</p> */}
+    <div className="max-w-3xl mx-auto my-10 bg-swhite-50 shadow-lg rounded-lg overflow-hidden">
+      <img
+        src={game.imageUrl}
+        alt={game.title}
+        className="w-full h-80 object-cover"
+      />
+      <div className="p-6">
+        <div className="flex justify-center">
+          <div className="flex flex-col justify-items-center">
 
-          <div className="grid grid-cols-2 gap-4 text-gray-700 mb-4">
-            <div>
-              <span className="font-semibold">Players:</span> {game.minPlayers}{" "}
-              - {game.maxPlayers}
-            </div>
-            <div>
-              <span className="font-semibold">Play Time:</span>{" "}
-              {game.minEstimatedPlayTimeMinutes} -{" "}
-              {game.maxEstimatedPlayTimeMinutes} mins
-            </div>
-            <div>
-              {/* <span className="font-semibold">Age Rating:</span> {game.ageRating} */}
-            </div>
+            <h2 className="text-3xl font-bold text-center text-swhite-950 mb-2">
+              {game.title}
+            </h2>
+            <p className="text-swhite-500 text-sm mb-6">
+              Published in {game.yearPublished}
+            </p>
           </div>
-          <div className="mb-4">
-            {/* <h3 className="text-lg font-semibold text-gray-800 mb-2">Mechanics</h3> */}
-            <ul className="list-disc list-inside text-gray-700">
-              {/* {game.mechanics.map((mechanic, index) => (
-                            <li key={index}>{mechanic}</li>
-                        ))} */}
-            </ul>
-          </div>
-          {!user.user && (
-            <button className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors">
-              Login to add to collection
-            </button>
-          ) || !gameInCollection() && (
-            <button
-              onClick={() =>
-                addGame.mutate({
-                  id_token: user.user?.id_token ?? "",
-                  gameId: game.id,
-                })
-              }
-              className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-            >
-              Add to Collection
-            </button>
-          )}
         </div>
+        <div className="flex flex-col justify-around">
+          <div className=" flex justify-around">
+            <div className="text-swhite-900 pb-3">
+              <span className="font-semibold">
+                {game.minPlayers} - {game.maxPlayers}
+              </span>{" "}
+              players
+            </div>
+            <div className="text-swhite-900 pb-3">
+              <span className="font-semibold">
+                {" "}
+                {game.minEstimatedPlayTimeMinutes} -{" "}
+                {game.maxEstimatedPlayTimeMinutes}{" "}
+              </span>
+              minutes
+            </div>
+            <div className="text-swhite-900 pb-3">
+              <span className="font-semibold">Age:</span> {game.age}+ years
+            </div>
+          </div>
+          <p className="text-swhite-900 mb-6">{game.description}</p>
+        </div>
+
+        {(!user.user || !gameInCollection()) && (
+          <button
+            onClick={() =>
+              addGame.mutate({
+                id_token: user.user?.id_token ?? "",
+                gameId: game.id,
+              })
+            }
+            className="w-full outline outline-2 outline-darkness-400 bg-darkness-100 hover:outline-none text-darkness-700 font-bold py-2 px-4 rounded hover:bg-darkness-300 hover:text-darkness-900 transition-colors"
+          >
+            {user.user ? "Add to Collection" : "Login to add to collection"}
+          </button>
+        )}
+
+        {gameInCollection() && (
+          <button
+            className="w-full bg-green-500 text-green-50 font-bold py-2 px-4 rounded cursor-not-allowed"
+            disabled
+          >
+            In Your Collection
+          </button>
+        )}
       </div>
-    </>
+    </div>
   );
 };

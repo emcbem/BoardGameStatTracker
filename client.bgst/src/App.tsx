@@ -28,7 +28,7 @@ function App() {
           <CustomAuthProvider>
             <UserContextProvider>
               <Navbar />
-              <div className="mx-auto w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg min-h-screen">
+              <div className="min-h-screen">
                 <Pages />
               </div>
               <footer className="bg-darkness-900 text-darkness-50 text-center py-4">

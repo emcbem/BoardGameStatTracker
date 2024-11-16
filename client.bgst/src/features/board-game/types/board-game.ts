@@ -6,5 +6,7 @@ export interface BoardGame {
     minPlayers: number,
     minEstimatedPlayTimeMinutes: number,
     maxEstimatedPlayTimeMinutes: number,
-    datePublished: Date
+    yearPublished: number,
+    description: string,
+    age: number
 }

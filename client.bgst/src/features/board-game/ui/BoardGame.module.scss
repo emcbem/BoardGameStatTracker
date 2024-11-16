@@ -1,14 +1,14 @@
 
 .inset-container {
-  padding: 1px; /* Padding around the image to create space */
-  border: 2px solid theme('colors.darkness.100'); /* Light border around the container */
-  border-radius: 8px; /* Optional: Rounded corners for a more subtle inset effect */
-  box-shadow: inset 4px 4px theme('colors.darkness.100'); /* Inset shadow to create depth */
-  overflow: hidden; /* Ensures the image doesn't spill out of the container */
+  padding: 1px; 
+  border: 2px solid theme('colors.darkness.100'); 
+  border-radius: 8px; 
+  box-shadow: inset 4px 4px theme('colors.darkness.100'); 
+  overflow: hidden;
   z-index: 1000;
 }
 
 .inset-image {
-  border-radius: 6px; /* Optional: Round the image's corners to match the container */
+  border-radius: 6px; 
   z-index: 1;
 }

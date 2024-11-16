@@ -4,7 +4,7 @@ import { GetStarted } from "./GetStarted";
 
 export const AboutUsPage = () => {
   return (
-    <>
+    <div className="mx-auto w-full md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg min-h-screen">
       <section className="bg-swhite-100 text-center py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl  mb-4 text-darkness-800">
@@ -28,6 +28,6 @@ export const AboutUsPage = () => {
       <About/>
 
       <GetStarted/>
-    </>
+    </div>
   );
 };

@@ -24,18 +24,18 @@ export const BoardGameSearchPage = () => {
           ...searchRequestController.searchRequest,
           page: pageParam,
         } as SearchRequest),
-      getNextPageParam: (lastPage) => lastPage.hasNextPage ? lastPage.pageNumber + 1 : null,
+      getNextPageParam: (lastPage) =>
+        lastPage.hasNextPage ? lastPage.pageNumber + 1 : null,
       getPreviousPageParam: (firstPage) =>
         firstPage.pageNumber == 1 ? 1 : firstPage.pageNumber - 1,
       initialPageParam: 0,
-
     });
 
   return (
     <div className="flex min-h-screen bg-swhite-100 p-6">
       <SidebarFilter controller={searchRequestController} />
 
-      <div className="w-3/4 p-6">
+      <div className="w-full sm:pb-6 sm:pr-6 sm:ps-6">
         <SearchBar controller={searchRequestController} />
 
         <SelectOrder controller={searchRequestController} />
@@ -49,12 +49,19 @@ export const BoardGameSearchPage = () => {
               <Link
                 to={`/view-boardgame/${boardGame.id}`}
                 key={index}
-                className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition flex flex-col"
+                className="p-4 bg-swhite-50 rounded-lg shadow-md hover:shadow-lg transition flex flex-col"
               >
-                <h3 className="text-md font-semibold truncate w-full">
-                  {boardGame.title}
-                </h3>
-                <p className="text-sm text-gray-500">{boardGame.id}</p>
+                <div className=" bg-swhite-200 rounded-md flex justify-center">
+                  <img
+                    src={boardGame.imageUrl}
+                    className="h-[250px] sm:h-[400px]  rounded-md object-contain"
+                  ></img>
+                </div>
+                <div className="flex justify-center">
+                  <h3 className="text-md font-semibold truncate">
+                    {boardGame.title}
+                  </h3>
+                </div>
               </Link>
             ))}
         </div>

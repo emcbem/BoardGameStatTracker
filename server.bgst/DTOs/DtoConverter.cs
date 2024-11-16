@@ -15,7 +15,9 @@ public static class DtoConverter
             MinPlayers = boardGame.MinPlayers,
             MinEstimatedPlayTimeMinutes = boardGame.MinEstimatedPlayTimeMinutes,
             MaxEstimatedPlayTimeMinutes = boardGame.MaxEstimatedPlayTimeMinutes,
-            DatePublished = boardGame.DatePublished,
+            YearPublished = boardGame.YearPublished,
+            Age = boardGame.Age,
+            Description = boardGame.Description,
         };
     }
 
