@@ -29,10 +29,10 @@ To complete this project there are some main task that will need to be completed
 - [X] Kubernetes Deployment
 - [X] Linting before deployment
 - [X] Testing before deployment
-- [ ] User authorization and authentication
+- [X] User authorization and authentication
 - [X] Database design to satisfy requierments 
 - [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
-- [ ] Able to add games into collection 
+- [X] Able to add games into collection 
 - [ ] Able to input a "play" of a board game
 - [ ] Able to tie other users to a "play" of a boardgame. 
 - [ ] Stats for how well you play a game are in the specific game page
@@ -41,8 +41,8 @@ To complete this project there are some main task that will need to be completed
 - [ ] Webhook to have popups show up when someone sends a friend request
 - [ ] Page to choose a random game from your collection.
 - [ ] Page to play and instance of a game
-- [ ] Page to view collection of games
-- [ ] Page to view a specific game
+- [X] Page to view collection of games
+- [X] Page to view a specific game
 - [X] Page to view all board games
 - [ ] Add friend page
 - [ ] View friends page
@@ -132,9 +132,9 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Page to view collection of games
-- [ ] Page to view a specific game
-- [ ] Able to add games into collection
+- [X] Page to view collection of games
+- [X] Page to view a specific game
+- [X] Able to add games into collection
 
 #### Rubric Items Hit
 
