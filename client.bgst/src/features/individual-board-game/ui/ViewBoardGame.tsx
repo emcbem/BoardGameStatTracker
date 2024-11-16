@@ -86,7 +86,6 @@ export const ViewBoardGame = () => {
         {gameInCollection() && (
           <button
             className="w-full bg-green-500 text-green-50 font-bold py-2 px-4 rounded cursor-not-allowed"
-            disabled
           >
             In Your Collection
           </button>

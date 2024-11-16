@@ -9,7 +9,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { BoardGameService } from "../services/BoardGame";
 import { BoardGameKeys } from "../tan-stack/BoardGameKeys";
 import { SearchRequest } from "../types/search-request";
-import { Link } from "react-router-dom";
+import { BoardGameCard } from "./BoardGameCard";
 
 export const BoardGameSearchPage = () => {
   const { query } = useParams();
@@ -46,23 +46,7 @@ export const BoardGameSearchPage = () => {
           {data?.pages
             ?.flatMap((page) => page.data)
             .map((boardGame, index) => (
-              <Link
-                to={`/view-boardgame/${boardGame.id}`}
-                key={index}
-                className="p-4 bg-swhite-50 rounded-lg shadow-md hover:shadow-lg transition flex flex-col"
-              >
-                <div className=" bg-swhite-200 rounded-md flex justify-center">
-                  <img
-                    src={boardGame.imageUrl}
-                    className="h-[250px] sm:h-[400px]  rounded-md object-contain"
-                  ></img>
-                </div>
-                <div className="flex justify-center">
-                  <h3 className="text-md font-semibold truncate">
-                    {boardGame.title}
-                  </h3>
-                </div>
-              </Link>
+              <BoardGameCard key={index} boardGame={boardGame}/>
             ))}
         </div>
 
