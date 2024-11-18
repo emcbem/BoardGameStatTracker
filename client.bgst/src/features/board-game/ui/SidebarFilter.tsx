@@ -21,7 +21,7 @@ export const SidebarFilter = ({controller} : {controller: SearchRequestControlle
         console.log(`Selected range: ${min} - ${max}`);
       };
   return (
-    <div className="w-[250px] p-4 bg-white rounded-lg shadow hidden sm:block">
+    <div className="w-[250px] p-4 bg-white rounded-lg shadow hidden md:block">
         <h2 className="text-lg font-semibold mb-4">Filters</h2>
         
 

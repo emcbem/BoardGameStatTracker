@@ -10,6 +10,7 @@ import { BoardGameService } from "../services/BoardGame";
 import { BoardGameKeys } from "../tan-stack/BoardGameKeys";
 import { SearchRequest } from "../types/search-request";
 import { BoardGameCard } from "./BoardGameCard";
+import { SmallFilter } from "./SmallFilter";
 
 export const BoardGameSearchPage = () => {
   const { query } = useParams();
@@ -38,11 +39,14 @@ export const BoardGameSearchPage = () => {
       <div className="w-full sm:pb-6 sm:pr-6 sm:ps-6">
         <SearchBar controller={searchRequestController} />
 
-        <SelectOrder controller={searchRequestController} />
+        <div className="flex justify-around mb-4">
+          <SmallFilter/> 
+          <SelectOrder controller={searchRequestController} />
+        </div>
 
         {isLoading && <p>Loading...</p>}
         {isError && <p>Error fetching data.</p>}
-        <div className="grid xl:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid xl:grid-cols-2 xxl:grid-cols-3 grid-cols-1 gap-4">
           {data?.pages
             ?.flatMap((page) => page.data)
             .map((boardGame, index) => (

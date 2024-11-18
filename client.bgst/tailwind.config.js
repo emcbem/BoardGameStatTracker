@@ -96,6 +96,9 @@ export default {
           50: "hsl(193, 33%, 94%)",
         },
       },
+      screens: {
+        'xxl': '2060px'
+      }
     },
   },
   plugins: [],
