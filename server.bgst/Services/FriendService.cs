@@ -51,4 +51,29 @@ public class FriendService
 
         return friendRequests;
     }
+
+    public async Task<bool> AddFriendRequest(string friendGuid, int userId)
+    {
+		using var context = await _dbContextFactory.CreateDbContextAsync();
+
+        var friendToRequest = await context.BgstUsers.FirstOrDefaultAsync(x => x.Friendcode == friendGuid);
+
+        if(friendToRequest == null)
+        {
+            return false;
+        }
+
+        var newFriendRequest = new FriendRequest()
+        {
+            BgstUser1Id = userId,
+            BgstUser2Id = friendToRequest.Id,
+            DateSent = DateTime.UtcNow,
+        };
+
+        await context.FriendRequests.AddAsync(newFriendRequest);
+
+        await context.SaveChangesAsync();
+
+        return true;
+	}
 }

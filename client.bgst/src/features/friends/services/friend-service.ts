@@ -3,13 +3,20 @@ import { environment } from "../../environment/services/environment"
 import { UserFriends } from "../types/user-friend"
 
 export const FriendService = {
-    getUserFriend: async (id_token: string) => {
+    getUserFriend: async (idToken: string) => {
         const response = await axios.get<UserFriends>(environment.apiUrl + "/friend/getFriends/", {
             headers: {
-                Authorization: `Bearer ${id_token}` 
+                Authorization: `Bearer ${idToken}` 
             }
         })
         return response.data
-
+    },
+    sendFriendRequest: async (idToken: string, userFriendCode: string) => {
+        const response = await axios.get(environment.apiUrl + "/friend/sendfriendrequest/" + userFriendCode, {
+            headers: {
+                Authorization: `Bearer ${idToken}` 
+            }
+        })
+        return response
     }
 }
