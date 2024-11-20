@@ -76,4 +76,47 @@ public class FriendService
 
         return true;
 	}
+
+    public async Task<bool> AcceptFriendRequest(int userId, int friendRequestId)
+    {
+        using var context = await _dbContextFactory.CreateDbContextAsync();
+
+        var friendRequestToAccept = await context.FriendRequests.FirstOrDefaultAsync(x => x.BgstUser2Id == userId && x.Id == friendRequestId);
+
+        if(friendRequestToAccept is null)
+        {
+            return false;
+        }
+
+        var friend = new Friend()
+        {
+            BgstUser1Id = friendRequestToAccept.BgstUser1Id,
+            BgstUser2Id = userId,
+            DateAccepted = DateTime.UtcNow
+        };
+
+        context.FriendRequests.Remove(friendRequestToAccept);
+        context.Friends.Add(friend);
+
+        await context.SaveChangesAsync();
+
+        return true;
+    }
+
+    public async Task<bool> DeclineFriendRequest(int userId, int friendRequestId)
+    {
+         using var context = await _dbContextFactory.CreateDbContextAsync();
+
+        var friendRequestToAccept = await context.FriendRequests.FirstOrDefaultAsync(x => x.BgstUser2Id == userId && x.Id == friendRequestId);
+
+        if(friendRequestToAccept is null)
+        {
+            return false;
+        }
+
+        context.FriendRequests.Remove(friendRequestToAccept);
+        await context.SaveChangesAsync();
+        return true;
+
+    }
 }

@@ -18,5 +18,21 @@ export const FriendService = {
             }
         })
         return response
+    },
+    acceptFriendRequest: async (idToken: string, friendRequestId: number) => {
+        const response = await axios.get(environment.apiUrl + "/friend/acceptFriendRequest/" + friendRequestId, {
+            headers: {
+                Authorization: `Bearer ${idToken}` 
+            }
+        })
+        return response
+    },
+    declineFriendRequest: async (idToken: string, friendRequestId: number) => {
+        const response = await axios.get(environment.apiUrl + "/friend/declineFriendRequest/" + friendRequestId, {
+            headers: {
+                Authorization: `Bearer ${idToken}` 
+            }
+        })
+        return response
     }
 }

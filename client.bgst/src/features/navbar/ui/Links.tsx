@@ -7,7 +7,6 @@ export const Links = () => {
     <>
       <BgstLink title="Board Games" url="/boardgames" />
       <BgstLink title="About Us" url="/aboutus" />
-      <BgstLink title="Contact" url="/contact" />
       {user?.user && <BgstLink title="Collection" url="/view-collection"/>}
       {user?.user && <BgstLink title="Friends" url="/view-friends"/>}
     </>

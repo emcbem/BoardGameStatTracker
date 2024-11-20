@@ -5,6 +5,7 @@ import { BoardGameSearchPage } from "../../board-game/ui/BoardGameSearchPage"
 import { ViewBoardGame } from "../../individual-board-game/ui/ViewBoardGame"
 import { ViewCollection } from "../../collection/ui/ViewCollection"
 import { ViewFriends } from "../../friends/ui/ViewFriends"
+import { ViewFriendRequests } from "../../friends/ui/ViewFriendRequests"
 
 
 export const Pages = () => {
@@ -17,6 +18,7 @@ export const Pages = () => {
         <Route path="/view-boardgame/:boardgameId" element={<ViewBoardGame/>}/>
         <Route path="/view-collection" element={<ViewCollection/>}/>
         <Route path="/view-friends" element={<ViewFriends/>}/>
+        <Route path="/view-friendRequests" element={<ViewFriendRequests />}/>
 
         
 

@@ -4,7 +4,8 @@ import { TextInput } from "../../shared/ui/TextInput";
 import { FriendQueries } from "../tanstack/friend-queries";
 import FriendCard from "./FriendCard";
 import { Modal } from "../../shared/ui/Modal";
-import { useFriendRequestModal } from "../hooks/useFriendRequestModal";
+import { useSendFriendRequestModal } from "../hooks/useSendFriendRequestModal";
+import { Link } from "react-router-dom";
 export const ViewFriends = () => {
   const user = useUserContext();
   const userFriend = FriendQueries.useGetUserFriend(
@@ -14,7 +15,9 @@ export const ViewFriends = () => {
 
   const [search, setSearch] = useState<string>("");
 
-  const modalController = useFriendRequestModal();
+  const friendModalController = useSendFriendRequestModal();
+  // const friendRequestController = useViewFriendRequestModal();
+
 
 
   return (
@@ -24,17 +27,18 @@ export const ViewFriends = () => {
           My Friends
         </h1>
         <div className="ml-auto relative">
-          {userFriend.data?.friendRequests && userFriend.data?.friendRequests?.length > 0 && <div className="w-[13px] h-[13px] rounded-full bg-red-400 absolute top-[-5px] right-[7px]"></div>}
-          <button
-            onClick={() => modalController.setOpen((x) => !x)}
+          {userFriend.data?.friendRequests && userFriend.data?.friendRequests?.length > 0 && <div className="w-[13px] h-[13px] rounded-full ring ring-red-100 bg-red-400 absolute top-[-5px] right-[7px]"></div>}
+          <Link
+
+            to="/view-friendRequests"
             className="mr-3 bg-bgst-50 text-bgst-600 py-2 px-6 rounded-md shadow-md transition hover:bg-bgst-100"
           >
             Incoming Requests
-          </button>
+          </Link>
         </div>
 
         <button
-          onClick={() => modalController.setOpen((x) => !x)}
+          onClick={() => friendModalController.setOpen((x) => !x)}
           className=" bg-bgst-600 text-bgst-50 py-2 px-6 rounded-md shadow-md transition hover:bg-bgst-700"
         >
           + Add Friend
@@ -55,7 +59,7 @@ export const ViewFriends = () => {
         ))}
       </div>
 
-      <Modal controller={modalController} />
+      <Modal controller={friendModalController} />
     </div>
   );
 };

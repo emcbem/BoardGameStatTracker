@@ -4,7 +4,7 @@ import { TextInput } from "../../shared/ui/TextInput";
 import { FriendQueries } from "../tanstack/friend-queries";
 import { useUserContext } from "../../authentication/hooks/useUserContext";
 
-export const useFriendRequestModal = () => {
+export const useSendFriendRequestModal = () => {
   const [friendCode, setFriendCode] = useState<string>("");
     const user = useUserContext()
 

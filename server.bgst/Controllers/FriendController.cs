@@ -52,6 +52,49 @@ public class FriendController : Controller
 		{
 			return BadRequest();
 		}
+	}
 
+	[HttpGet("acceptFriendRequest/{friendRequestId}")]
+	public async Task<IActionResult> AcceptFriendRequest(int friendRequestId)
+	{
+		var user = await userService.GetUserFromClaims(User);
+
+		if (user == null)
+		{
+			return Unauthorized();
+		}
+
+		var result = await friendService.AcceptFriendRequest(user.Id, friendRequestId);
+
+		if(result == true)
+		{
+			return Ok();
+		}
+		else
+		{
+			return BadRequest();
+		}
+	}
+
+	[HttpGet("declineFriendRequest/{friendRequestId}")]
+	public async Task<IActionResult> DeclineFriendRequest(int friendRequestId)
+	{
+		var user = await userService.GetUserFromClaims(User);
+
+		if (user == null)
+		{
+			return Unauthorized();
+		}
+
+		var result = await friendService.DeclineFriendRequest(user.Id, friendRequestId);
+
+		if(result == true)
+		{
+			return Ok();
+		}
+		else
+		{
+			return BadRequest();
+		}
 	}
 }
