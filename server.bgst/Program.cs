@@ -17,6 +17,8 @@ builder.Services.AddCors();
 builder.Services.AddScoped<BoardGameService>();
 builder.Services.AddScoped<CollectionService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<FriendService>();
+
 
 
 builder.Services.AddDbContextFactory<BgstContext>(p =>

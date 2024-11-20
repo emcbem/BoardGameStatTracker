@@ -19,6 +19,7 @@ export const UserContextProvider: FC<{ children: ReactNode }> = ({
         user: data,
         error: error?.message,
         isLoading,
+        id_token: user?.id_token
       }}
     >
       {children}
