@@ -14,16 +14,29 @@ export const ViewFriends = () => {
 
   const [search, setSearch] = useState<string>("");
 
-
   const modalController = useFriendRequestModal();
+
 
   return (
     <div className="min-h-screen p-8">
-      <header className="flex justify-between items-center mb-8">
+      <header className="flex items-center mb-8">
         <h1 className="text-4xl font-extrabold text-darkness-800">
           My Friends
         </h1>
-        <button onClick={() => modalController.setOpen(x => !x)} className="bg-bgst-600 text-swhite-50 py-2 px-6 rounded-md shadow-md transition hover:bg-bgst-700">
+        <div className="ml-auto relative">
+          {userFriend.data?.friendRequests && userFriend.data?.friendRequests?.length > 0 && <div className="w-[13px] h-[13px] rounded-full bg-red-400 absolute top-[-5px] right-[7px]"></div>}
+          <button
+            onClick={() => modalController.setOpen((x) => !x)}
+            className="mr-3 bg-bgst-50 text-bgst-600 py-2 px-6 rounded-md shadow-md transition hover:bg-bgst-100"
+          >
+            Incoming Requests
+          </button>
+        </div>
+
+        <button
+          onClick={() => modalController.setOpen((x) => !x)}
+          className=" bg-bgst-600 text-bgst-50 py-2 px-6 rounded-md shadow-md transition hover:bg-bgst-700"
+        >
           + Add Friend
         </button>
       </header>

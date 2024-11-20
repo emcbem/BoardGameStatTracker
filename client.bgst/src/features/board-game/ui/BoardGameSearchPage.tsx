@@ -41,7 +41,10 @@ export const BoardGameSearchPage = () => {
 
         <div className="flex justify-around mb-4">
           <SmallFilter/> 
+          <div className="ml-auto">
+
           <SelectOrder controller={searchRequestController} />
+          </div>
         </div>
 
         {isLoading && <p>Loading...</p>}

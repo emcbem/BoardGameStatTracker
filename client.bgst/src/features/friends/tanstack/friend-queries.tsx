@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { FriendsKeys } from "./friend-query-factory";
+import { FriendsKeys } from "./friend-query-keys";
 import { FriendService } from "../services/friend-service";
 
 export const FriendQueries = {
@@ -11,6 +11,7 @@ export const FriendQueries = {
     });
   },
   useAddFriendRequest: (userId: number) => {
+    const queryClient = useQueryClient();
     return useMutation({
       mutationFn: ({
         idToken,
@@ -20,8 +21,7 @@ export const FriendQueries = {
         friendCode: string;
       }) => FriendService.sendFriendRequest(idToken, friendCode),
       onSuccess: () => {
-        const context = useQueryClient();
-        context.invalidateQueries({
+        queryClient.invalidateQueries({
           queryKey: FriendsKeys.FromUser(userId),
         });
       },

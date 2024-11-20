@@ -45,7 +45,7 @@ public class FriendService
         var friendRequests = await context.FriendRequests
                                     .Include(x => x.BgstUser1)
                                     .Include(x => x.BgstUser2)
-                                    .Where(x => x.BgstUser1Id == id || x.BgstUser2Id == id)
+                                    .Where(x => x.BgstUser2Id == id)
                                     .Select(x => x.ToFriendRequestDto(id))
                                     .ToListAsync();
 

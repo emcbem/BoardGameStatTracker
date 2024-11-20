@@ -34,23 +34,23 @@ public class CollectionController : Controller
     }
 
     [HttpGet("addgametocollection/{gameId}")]
-    public async Task<CollectionDto?> AddGameToCollection(int gameId)
+    public async Task<IActionResult?> AddGameToCollection(int gameId)
     {
         if(User == null || User.Identity?.IsAuthenticated == false )
         {
-            return null;
+            return Unauthorized();
         }
 
         var user = await userService.GetUserFromClaims(User);
 
         if(user == null)
         {
-            return null;
+            return Unauthorized();
         }
 
         var collectionDto = await collectionService.AddGameToUser(user, gameId);
 
-        return collectionDto;
+        return Ok(collectionDto);
     }
 
     [HttpGet("getcollection/{id}")]
