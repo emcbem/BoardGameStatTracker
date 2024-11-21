@@ -183,6 +183,7 @@ To complete this project there are some main task that will need to be completed
 
 - [ ] Able to tie other users to a "play" of a boardgame. 
 - [ ] Only able to tie users to a "play" of a board game if they are friends
+- [ ] Page to play and instance of a game
 
 #### Rubric Items Hit
 
@@ -196,8 +197,8 @@ To complete this project there are some main task that will need to be completed
 - 5/5: CI/CD pipeline
 - 5/5: Tests run in pipeline, pipeline aborts if they fail
 - 5/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 9/12: 4+ reusable layout components
+- **9/9: 3+ reusable form input components**
+- **12/12: 4+ reusable layout components**
 - 10/10: Authentication and user account support
 - 5/5: Authorized pages and public pages
 
@@ -206,7 +207,8 @@ To complete this project there are some main task that will need to be completed
 #### To-Do Items 
 
 - [ ] Page to choose a random game from your favorites.
-- [ ] Page to play and instance of a game
+- [ ] Stats for how well you play a game are in the specific game page
+
 
 #### Rubric Items Hit
 
@@ -220,8 +222,8 @@ To complete this project there are some main task that will need to be completed
 - 5/5: CI/CD pipeline
 - 5/5: Tests run in pipeline, pipeline aborts if they fail
 - 5/5: Linting in pipeline
-- **9/9: 3+ reusable form input components**
-- **12/12: 4+ reusable layout components**
+- 9/9: 3+ reusable form input components
+- 12/12: 4+ reusable layout components
 - 10/10: Authentication and user account support
 - 5/5: Authorized pages and public pages
 
@@ -230,7 +232,6 @@ To complete this project there are some main task that will need to be completed
 #### To-Do Items 
 
 - [ ] Webhook to have popups show up when someone sends a friend request
-- [ ] Stats for how well you play a game are in the specific game page
 - [ ] Touch-ups
 
 #### Rubric Items Hit
