@@ -37,15 +37,15 @@ To complete this project there are some main task that will need to be completed
 - [ ] Able to tie other users to a "play" of a boardgame. 
 - [ ] Stats for how well you play a game are in the specific game page
 - [ ] Only able to tie users to a "play" of a board game if they are friends
-- [ ] Toast setup to display errors and certain success messages
+- [X] Toast setup to display errors and certain success messages
 - [ ] Webhook to have popups show up when someone sends a friend request
 - [ ] Page to choose a random game from your collection.
 - [ ] Page to play and instance of a game
 - [X] Page to view collection of games
 - [X] Page to view a specific game
 - [X] Page to view all board games
-- [ ] Add friend page
-- [ ] View friends page
+- [X] Add friend page
+- [X] View friends page
 - [X] About us page
 - [X] Home page 
 
@@ -157,9 +157,8 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Page to play and instance of a game
-- [ ] Add friend page
-- [ ] View friends page
+- [X] Add friend page
+- [X] View friends page
 
 #### Rubric Items Hit
 
@@ -173,8 +172,8 @@ To complete this project there are some main task that will need to be completed
 - 5/5: CI/CD pipeline
 - 5/5: Tests run in pipeline, pipeline aborts if they fail
 - 5/5: Linting in pipeline
-- **9/9: 3+ reusable form input components**
-- **12/12: 4+ reusable layout components**
+- 0/9: 3+ reusable form input components**
+- 6/12: 4+ reusable layout components
 - 10/10: Authentication and user account support
 - **5/5: Authorized pages and public pages**
 
@@ -184,6 +183,7 @@ To complete this project there are some main task that will need to be completed
 
 - [ ] Able to tie other users to a "play" of a boardgame. 
 - [ ] Only able to tie users to a "play" of a board game if they are friends
+- [ ] Page to play and instance of a game
 
 #### Rubric Items Hit
 
@@ -197,8 +197,8 @@ To complete this project there are some main task that will need to be completed
 - 5/5: CI/CD pipeline
 - 5/5: Tests run in pipeline, pipeline aborts if they fail
 - 5/5: Linting in pipeline
-- 9/9: 3+ reusable form input components
-- 12/12: 4+ reusable layout components
+- **9/9: 3+ reusable form input components**
+- **12/12: 4+ reusable layout components**
 - 10/10: Authentication and user account support
 - 5/5: Authorized pages and public pages
 
@@ -208,7 +208,7 @@ To complete this project there are some main task that will need to be completed
 
 - [ ] Page to choose a random game from your favorites.
 - [ ] Stats for how well you play a game are in the specific game page
-- [ ] Touch-ups
+
 
 #### Rubric Items Hit
 
