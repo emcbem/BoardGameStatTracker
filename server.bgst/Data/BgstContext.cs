@@ -6,11 +6,15 @@ namespace server.bgst.Data;
 
 public partial class BgstContext : DbContext
 {
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     public BgstContext()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     {
     }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     public BgstContext(DbContextOptions<BgstContext> options)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
         : base(options)
     {
     }
@@ -138,6 +142,7 @@ public partial class BgstContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BoardGameId).HasColumnName("board_game_id");
             entity.Property(e => e.DatePlayed).HasColumnName("date_played");
+            entity.Property(e => e.TimeElapsedMinutes).HasColumnName("time_elapsed_minutes");
 
             entity.HasOne(d => d.BoardGame).WithMany(p => p.PlayedGames)
                 .HasForeignKey(d => d.BoardGameId)
@@ -153,9 +158,10 @@ public partial class BgstContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BgstUserId).HasColumnName("bgst_user_id");
-            entity.Property(e => e.EndRand).HasColumnName("end_rand");
+            entity.Property(e => e.EndRank).HasColumnName("end_ranl");
             entity.Property(e => e.PlayedGameId).HasColumnName("played_game_id");
             entity.Property(e => e.Points).HasColumnName("points");
+            entity.Property(e => e.Username).HasColumnName("username");
 
             entity.HasOne(d => d.BgstUser).WithMany(p => p.UserPlayedGames)
                 .HasForeignKey(d => d.BgstUserId)

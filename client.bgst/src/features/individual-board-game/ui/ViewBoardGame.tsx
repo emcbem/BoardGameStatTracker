@@ -2,7 +2,6 @@ import { useParams } from "react-router";
 import { BoardGameQueries } from "../../board-game/tan-stack/BoardGameQueries";
 import { useUserContext } from "../../authentication/hooks/useUserContext";
 import { useAddGameToCollection } from "../../collection/tan-stack/useAddGameToCollection";
-import { useAuth } from "react-oidc-context";
 
 export const ViewBoardGame = () => {
   const { boardgameId } = useParams();
@@ -10,8 +9,7 @@ export const ViewBoardGame = () => {
     Number.parseInt(boardgameId ?? "")
   );
   const userContext = useUserContext();
-  const user = useAuth();
-  const addGame = useAddGameToCollection(user.user?.id_token ?? "");
+  const addGame = useAddGameToCollection(userContext?.id_token ?? "");
 
   const gameInCollection = () => {
     return !!userContext.user?.collectionItems?.some(
@@ -69,17 +67,17 @@ export const ViewBoardGame = () => {
           <p className="text-swhite-900 mb-6">{game.description}</p>
         </div>
 
-        {(!user.user || !gameInCollection()) && (
+        {(!userContext.user || !gameInCollection()) && (
           <button
             onClick={() =>
               addGame.mutate({
-                id_token: user.user?.id_token ?? "",
+                id_token: userContext?.id_token ?? "",
                 gameId: game.id,
               })
             }
             className="w-full outline outline-2 outline-darkness-400 bg-darkness-100 hover:outline-none text-darkness-700 font-bold py-2 px-4 rounded hover:bg-darkness-300 hover:text-darkness-900 transition-colors"
           >
-            {user.user ? "Add to Collection" : "Login to add to collection"}
+            {userContext.user ? "Add to Collection" : "Login to add to collection"}
           </button>
         )}
 

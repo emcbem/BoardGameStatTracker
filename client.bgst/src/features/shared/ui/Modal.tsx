@@ -25,13 +25,13 @@ export const Modal = ({ controller }: { controller: ModalController }) => {
         <div className="ms-4 m-3">{controller.children}</div>
         <hr className="border-darkness-100 border-1"></hr>
         <div className="flex flex-row p-2">
-            <div className="ml-auto mr-2 p-1 px-2 bg-green-800 underline text-green-50 rounded-md hover:bg-green-600 ">
+            <div className="ml-auto mr-2 p-1 px-2 bg-green-600 underline text-green-50 rounded-md hover:bg-green-700 ">
                 <button onClick={() => {closeModal(); controller.onSubmit(); controller.onClose()}} >
                     Submit
                 </button>
             </div>
             <div className="p-1 hover:bg-red-50 text-red-800 rounded-md ">
-                <button className="underline" onClick={() => {closeModal(); controller.onClose()}}>
+                <button className="underline"  onClick={() => {closeModal(); controller.onClose()}}>
                     Cancel
                 </button>
             </div>

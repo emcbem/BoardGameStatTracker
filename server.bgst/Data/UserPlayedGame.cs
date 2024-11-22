@@ -13,7 +13,9 @@ public partial class UserPlayedGame
 
     public int? Points { get; set; }
 
-    public int? EndRand { get; set; }
+    public int? EndRank { get; set; }
+
+    public string? Username {get; set;}
 
     public virtual BgstUser? BgstUser { get; set; }
 

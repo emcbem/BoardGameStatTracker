@@ -13,5 +13,7 @@ public partial class PlayedGame
 
     public virtual BoardGame? BoardGame { get; set; }
 
+    public int? TimeElapsedMinutes {get; set;}
+
     public virtual ICollection<UserPlayedGame> UserPlayedGames { get; set; } = new List<UserPlayedGame>();
 }
