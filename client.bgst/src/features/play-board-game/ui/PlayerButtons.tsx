@@ -50,7 +50,6 @@ export const PlayerButtons = ({ index }: { index: number }) => {
       <button
         onClick={() => controller.removePlayer(index)}
         className="bg-red-500 text-white w-2/5 h-full px-2 py-1 hover:scale-105 stroke-red-50 hover:stroke-red-100 transition-all hover:bg-red-400 rounded flex items-center justify-center"
-        disabled={controller.players.length <= controller.minPlayers}
       >
         <MinusCircleIcon className="w-5 h-5 stroke-inherit" />
       </button>

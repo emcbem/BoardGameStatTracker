@@ -6,7 +6,6 @@ const oidcConfig: AuthProviderProps = {
   client_id: "bgst-client-id",
   redirect_uri: process.env.NODE_ENV == "production" ? "https://bgst.duckdns.org/" : "http://localhost:5173/" ,
   onSigninCallback: async () => {
-    console.log("we got here")
     const newUrl = window.location.href.split("?")[0];
     window.history.replaceState({}, document.title, newUrl);
   },

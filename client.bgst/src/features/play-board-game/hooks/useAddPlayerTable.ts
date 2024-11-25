@@ -3,6 +3,7 @@ import { AddPlayerTableController } from "../types/AddPlayerTableController";
 import { UserPlayedGame } from "../types/UserPlayedGame";
 import { useUserContext } from "../../authentication/hooks/useUserContext";
 import { FriendQueries } from "../../friends/tanstack/friend-queries";
+import toast from "react-hot-toast";
 
 export const useAddPlayerTable = (minPlayers: number, maxPlayers: number) => {
   const user = useUserContext()
@@ -35,6 +36,10 @@ export const useAddPlayerTable = (minPlayers: number, maxPlayers: number) => {
   const removePlayer = (index: number) => {
     if (players.length > minPlayers) {
       setPlayers(players.filter((_, i) => i !== index));
+    }
+    else
+    {
+      toast.error("Unable to play with less than " + minPlayers + " players")
     }
   };
 

@@ -6,7 +6,6 @@ export const DropdownSelect = <T,>({
   controller: DropdownController<T>;
 }) => {
   const { options, selectedOption, setSelectedOption, stringifyOption } = controller;
-  console.log(options)
   return (
     <select className="w-full outline bg-swhite-50 outline-darkness-50 rounded-sm p-1"
       value={selectedOption !== undefined ? (stringifyOption ? stringifyOption(selectedOption) : String(selectedOption)) : ""}

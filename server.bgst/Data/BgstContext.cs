@@ -158,7 +158,7 @@ public partial class BgstContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BgstUserId).HasColumnName("bgst_user_id");
-            entity.Property(e => e.EndRank).HasColumnName("end_ranl");
+            entity.Property(e => e.EndRank).HasColumnName("end_rank");
             entity.Property(e => e.PlayedGameId).HasColumnName("played_game_id");
             entity.Property(e => e.Points).HasColumnName("points");
             entity.Property(e => e.Username).HasColumnName("username");
