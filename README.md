@@ -33,14 +33,14 @@ To complete this project there are some main task that will need to be completed
 - [X] Database design to satisfy requierments 
 - [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
 - [X] Able to add games into collection 
-- [ ] Able to input a "play" of a board game
-- [ ] Able to tie other users to a "play" of a boardgame. 
+- [X] Able to input a "play" of a board game
+- [X] Able to tie other users to a "play" of a boardgame. 
 - [ ] Stats for how well you play a game are in the specific game page
-- [ ] Only able to tie users to a "play" of a board game if they are friends
+- [X] Only able to tie users to a "play" of a board game if they are friends
 - [X] Toast setup to display errors and certain success messages
 - [ ] Webhook to have popups show up when someone sends a friend request
 - [ ] Page to choose a random game from your collection.
-- [ ] Page to play and instance of a game
+- [X] Page to play and instance of a game
 - [X] Page to view collection of games
 - [X] Page to view a specific game
 - [X] Page to view all board games
@@ -181,9 +181,9 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Able to tie other users to a "play" of a boardgame. 
-- [ ] Only able to tie users to a "play" of a board game if they are friends
-- [ ] Page to play and instance of a game
+- [X] Able to tie other users to a "play" of a boardgame. 
+- [X] Only able to tie users to a "play" of a board game if they are friends
+- [X] Page to play and instance of a game
 
 #### Rubric Items Hit
 
