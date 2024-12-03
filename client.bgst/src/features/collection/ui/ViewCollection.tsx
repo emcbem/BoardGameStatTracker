@@ -34,38 +34,40 @@ export const ViewCollection = () => {
           </p>
         )}
 
-        <div
-          className={`grid ${
-            user.user.collectionItems.length === 1
-              ? "justify-center items-center max-w-md mx-auto"
-              : "grid-cols-1 sm:grid-cols-2"
-          } gap-6 bg-gray-100 p-6 rounded-lg shadow-md`}
-        >
-          {user.user.collectionItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-3 shadow-lg rounded-lg w-full overflow-hidden box-border"
-            >
-              <div className="overflow-hidden transition-transform transform hover:scale-105">
-                <BoardGameCard boardGame={item.boardGame} />
+        {!collectionDoesntExist && (
+          <div
+            className={`grid ${
+              user.user.collectionItems.length === 1
+                ? "justify-center items-center max-w-md mx-auto"
+                : "grid-cols-1 sm:grid-cols-2"
+            } gap-6 bg-swhite-100 p-6 rounded-lg shadow-md`}
+          >
+            {user.user.collectionItems.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-3 shadow-lg rounded-lg w-full overflow-hidden box-border"
+              >
+                <div className="overflow-hidden transition-transform transform hover:scale-105">
+                  <BoardGameCard boardGame={item.boardGame} />
+                </div>
+                <div className="flex flex-row gap-3 align-baseline">
+                  <Link
+                    to={`/play/${item.boardGame.id}`}
+                    className="bg-bgst-400 text-bgst-50 w-full text-center hover:bg-bgst-500 shadow-md hover:shadow-lg font-semibold px-2 py-3 mt-3 rounded-lg"
+                  >
+                    Play
+                  </Link>
+                  <Link
+                    to={`/stats/${item.boardGame.id}`}
+                    className="py-3 bg-bgst-50 text-bgst-500 underline hover:bg-bgst-100 hover:text-bgst-600 duration-500 transition-colors w-fit font-semibold px-2 mt-3 rounded-lg"
+                  >
+                    Stats
+                  </Link>
+                </div>
               </div>
-              <div className="flex flex-row gap-3 align-baseline">
-                <Link
-                  to={`/play/${item.boardGame.id}`}
-                  className="bg-bgst-400 text-bgst-50 w-full text-center hover:bg-bgst-500 shadow-md hover:shadow-lg font-semibold px-2 py-3 mt-3 rounded-lg"
-                >
-                  Play
-                </Link>
-                <Link
-                  to={`/stats/${item.boardGame.id}`}
-                  className="py-3 bg-bgst-50 text-bgst-500 underline hover:bg-bgst-100 hover:text-bgst-600 duration-500 transition-colors w-fit font-semibold px-2 mt-3 rounded-lg"
-                >
-                  Stats
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {collectionDoesntExist && (
           <>
