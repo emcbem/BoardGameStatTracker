@@ -206,8 +206,8 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Page to choose a random game from your favorites.
-- [ ] Stats for how well you play a game are in the specific game page
+- [X] Page to choose a random game from your collection.
+- [X] Stats for how well you play a game are in the specific game page
 
 
 #### Rubric Items Hit
