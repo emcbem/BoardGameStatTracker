@@ -1,7 +1,7 @@
 import { useUserContext } from "../../authentication/hooks/useUserContext";
+import { EmptyContent } from "../../shared/ui/EmptyContent";
 import { FriendQueries } from "../tanstack/friend-queries";
 import { FriendRequestCard } from "./FriendRequestCard";
-import { Ghost } from "./Ghost";
 
 export const ViewFriendRequests = () => {
   const user = useUserContext();
@@ -29,16 +29,7 @@ export const ViewFriendRequests = () => {
               </div>
             </div>
           )) || (
-            <div className="flex justify-center">
-          <div className="flex justify-center items-center flex-col  bg-swhite-300 rounded-2xl pt-2 pb-4 px-3 w-fit">
-              <div className="w-[200px] h-[200px] mb-3">
-                <Ghost />
-            </div>
-            <p className="text-center font-light text-swhite-800 ">
-              No incoming friend requests
-            </p>
-          </div>
-                </div>
+          <EmptyContent content="No incoming friend requests"/>
         )}
       </div>
     </>

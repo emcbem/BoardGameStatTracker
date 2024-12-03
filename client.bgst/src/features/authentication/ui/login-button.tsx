@@ -31,7 +31,7 @@ export default function LoginButton() {
   if (auth.isAuthenticated) {
     return (
       <button
-        className="underline text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50 px-3 py-2 rounded-md text-sm font-medium"
+        className="text-darkness-200 transition-all hover:bg-darkness-600 hover:text-darkness-50 px-3 py-2 rounded-md text-sm font-medium"
         onClick={() => {
           document.cookie = "jwt_token=;";
           auth.removeUser();
@@ -44,7 +44,7 @@ export default function LoginButton() {
 
   return (
     <button
-      className="text-zinc-300 hover:bg-zinc-700 hover:text-zinc-50 px-3 py-2 rounded-md text-sm font-medium"
+      className="text-darkness-200 hover:bg-darkness-600 hover:text-darkness-50 px-3 py-2 rounded-md text-sm font-medium"
       onClick={() => void auth.signinRedirect()}
     >
       Log in

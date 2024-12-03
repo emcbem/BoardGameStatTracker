@@ -36,10 +36,10 @@ builder.Services.AddAuthentication("Bearer")
                 ValidateIssuer = true,
                 ValidateAudience = true,
                 ValidateLifetime = true,
-                ValidIssuer = "https://auth.snowse.duckdns.org/realms/advanced-frontend",
-                ValidAudience = "bgst-client-id",
+                ValidIssuer = "https://dev-013fwxix4dwe1jea.us.auth0.com",
+                ValidAudience = "RN5ONZNFTAcXegQh2aPrVuubc65II5lU",
             };
-		options.Authority = "https://auth.snowse.duckdns.org/realms/advanced-frontend";
+		options.Authority = "https://dev-013fwxix4dwe1jea.us.auth0.com";
 	});
 
 var app = builder.Build();

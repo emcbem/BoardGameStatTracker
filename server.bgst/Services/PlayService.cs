@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using server.bgst.Data;
+using server.bgst.DTOs;
 using server.bgst.Requests;
 
 namespace server.bgst.Services;
@@ -42,5 +43,28 @@ public class PlayService{
         }
 
         return true;
+    }
+
+    public async Task<BoardGameStats?> GetUserStatsForGame(int userId, int boardGameId)
+    {
+        using var context = await factory.CreateDbContextAsync();
+
+        var games = await context.BoardGames
+            .Include(x => x.PlayedGames)
+            .ThenInclude(x => x.UserPlayedGames.Where(y => y.BgstUserId == userId))
+            .Where(x => x.Id == boardGameId)
+            .FirstOrDefaultAsync();
+
+        BoardGameStats stats = new BoardGameStats(){
+            BoardGame = games?.ToBoardGameDto(),
+            AverageRank = games?.PlayedGames?.SelectMany(x => x.UserPlayedGames)?.Select(x => x.EndRank).Average(),
+            AverageScore = games?.PlayedGames?.SelectMany(x => x.UserPlayedGames)?.Select(x => x.Points).Average(),
+            PlayedGames = games?.PlayedGames?.SelectMany(x => x.UserPlayedGames)?.Select(x => {
+                return x.ToPlayedGameDto();
+            }).ToList(),
+            TimesPlayed = games?.PlayedGames?.SelectMany(x => x.UserPlayedGames)?.Count()
+        };
+
+        return stats;
     }
 }

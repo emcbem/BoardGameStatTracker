@@ -37,7 +37,7 @@ const nav = useNavigate()
 
   const playMutation = PlayQueries.usePlayGame()
 
-  const handleSubmit =  () => {
+  const handleSubmit =  async () => {
     const playerRequests = PlayerController.players.map((x, i) => i == 0 ? {...x, name: user.user?.username, linked: true, userId: user.user?.id  }: x)
     const game = {datePlayed: dateController.date, boardGameId: Number(boardgameId), players: playerRequests, timeElapsedMinutes: InputController.selectedValue } as PlayGameRequest
     if(game.players.some(x => x.rank == 0 || x.name == ""))
@@ -45,10 +45,9 @@ const nav = useNavigate()
       toast.error("All players need a rank and a name")
       return;
     }
-   playMutation.mutateAsync({playerRequest: game})
-   setTimeout(() => {
+   await playMutation.mutateAsync({playerRequest: game})
+   
     nav('/');
-   }, 3000)
   }
 
   if (isLoading || isFetching) {

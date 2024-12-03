@@ -11,17 +11,17 @@ const FriendCard = ({ friend }: { friend: Friend }) => {
         <h2 className="text-xl font-semibold text-swhite-950 mb-2">
           {friend.user.username}
         </h2>
-        <p className="text-sm text-swhite-500 mb-4">
+        <p className="text-sm text-swhite-500 ">
           Friend since {new Date(friend.dateAccepted).getFullYear()}
         </p>
-        <div className="flex space-x-3">
+        {/* <div className="flex space-x-3">
           <button className="bg-bgst-600 text-bgst-50 py-2 px-4 rounded-lg shadow-md">
             View
           </button>
           <button className="bg-red-600 text-red-50 py-2 px-4 rounded-lg shadow-md">
             Remove
           </button>
-        </div>
+        </div> */}
       </div>
     );
   };

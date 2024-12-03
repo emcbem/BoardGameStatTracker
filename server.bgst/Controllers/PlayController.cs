@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using server.bgst.DTOs;
 using server.bgst.Requests;
 using server.bgst.Services;
 
@@ -29,5 +30,19 @@ public class PlayController : Controller
        {
         return BadRequest("Erm, this didn't work");
        }
+    }
+
+    [HttpGet("getStats/{boardGameId}")]
+    public async Task<BoardGameStats?> GetBoardGameStats(int boardGameId)
+    {
+        var user = await userService.GetUserFromClaims(User);
+
+		if (user == null)
+		{
+			return null;
+		}
+
+        var boardGameStats = await playService.GetUserStatsForGame(user.Id, boardGameId);
+        return boardGameStats;
     }
 }

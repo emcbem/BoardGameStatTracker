@@ -94,4 +94,15 @@ public static class DtoConverter
         };
     }
 
+    public static PlayedGameDTO ToPlayedGameDto(this UserPlayedGame game)
+    {
+        PlayedGameDTO playedGame = new PlayedGameDTO{
+            PlayedDate = $"{game?.PlayedGame?.DatePlayed?.Year}-{game?.PlayedGame?.DatePlayed?.Month}-{game?.PlayedGame?.DatePlayed?.Day}",
+            Rank = game?.EndRank,
+            Score = game?.Points,
+        };
+
+        return playedGame;
+    }
+
 }
