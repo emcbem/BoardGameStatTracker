@@ -40,7 +40,7 @@ export const BoardGameSearchPage = () => {
         <SearchBar controller={searchRequestController} />
 
         <div className="flex justify-around mb-4">
-          <SmallFilter/> 
+          <SmallFilter controller={searchRequestController}/> 
           <div className="ml-auto">
 
           <SelectOrder controller={searchRequestController} />

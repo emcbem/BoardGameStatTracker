@@ -28,10 +28,10 @@ export const ViewFriends = () => {
             My Friends
           </h1>
           <div className="ml-auto flex flex-row gap-3">
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center relative">
               {userFriend.data?.friendRequests &&
-                userFriend.data?.friendRequests?.length > 0 && (
-                  <div className="w-[13px] h-[13px] rounded-full ring ring-red-100 bg-red-400 absolute top-[-5px] right-[7px]"></div>
+                userFriend.data?.friendRequests.length > 0 && (
+                  <div className="w-[13px] h-[13px] rounded-full ring ring-red-100 bg-red-400 absolute top-[-6px] right-[-6px]"></div>
                 )}
               <Link
                 to="/view-friendRequests"
@@ -40,6 +40,7 @@ export const ViewFriends = () => {
                 Incoming Requests
               </Link>
             </div>
+
             <button
               onClick={() => friendModalController.setOpen((x) => !x)}
               className="bg-bgst-600 text-bgst-50 py-2 px-6 text-sm font-medium rounded-md shadow-md transition hover:bg-bgst-700 box-border appearance-none focus:outline-none"
