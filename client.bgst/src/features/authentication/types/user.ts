@@ -5,6 +5,6 @@ export interface User{
     username: string,
     email: string,
     imageUrl: string,
-    friendCode: string,
+    friendcode: string,
     collectionItems: Collection[]
 }

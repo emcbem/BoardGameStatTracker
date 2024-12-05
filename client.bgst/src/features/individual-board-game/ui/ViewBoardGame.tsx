@@ -2,8 +2,10 @@ import { useParams } from "react-router";
 import { BoardGameQueries } from "../../board-game/tan-stack/BoardGameQueries";
 import { useUserContext } from "../../authentication/hooks/useUserContext";
 import { useAddGameToCollection } from "../../collection/tan-stack/useAddGameToCollection";
+import { useAuth } from "react-oidc-context";
 
 export const ViewBoardGame = () => {
+  const auth = useAuth();
   const { boardgameId } = useParams();
   const { data: game, isError } = BoardGameQueries.useGetSpecificGame(
     Number.parseInt(boardgameId ?? "")
@@ -25,6 +27,16 @@ export const ViewBoardGame = () => {
     return <div>Loading...</div>;
   }
 
+  function handleCollectionAdd(gameId: number): void {
+    if (userContext.user) {
+      return addGame.mutate({
+        id_token: userContext?.id_token ?? "",
+        gameId: gameId,
+      });
+    }
+    auth.signinRedirect();
+  }
+
   return (
     <div className="max-w-3xl mx-auto my-10 bg-swhite-50 shadow-lg rounded-lg overflow-hidden">
       <img
@@ -35,7 +47,6 @@ export const ViewBoardGame = () => {
       <div className="p-6">
         <div className="flex justify-center">
           <div className="flex flex-col justify-items-center">
-
             <h2 className="text-3xl font-bold text-center text-swhite-950 mb-2">
               {game.title}
             </h2>
@@ -69,22 +80,17 @@ export const ViewBoardGame = () => {
 
         {(!userContext.user || !gameInCollection()) && (
           <button
-            onClick={() =>
-              addGame.mutate({
-                id_token: userContext?.id_token ?? "",
-                gameId: game.id,
-              })
-            }
+            onClick={() => handleCollectionAdd(game.id)}
             className="w-full outline outline-2 outline-darkness-400 bg-darkness-100 hover:outline-none text-darkness-700 font-bold py-2 px-4 rounded hover:bg-darkness-300 hover:text-darkness-900 transition-colors"
           >
-            {userContext.user ? "Add to Collection" : "Login to add to collection"}
+            {userContext.user
+              ? "Add to Collection"
+              : "Login to add to collection"}
           </button>
         )}
 
         {gameInCollection() && (
-          <button
-            className="w-full bg-green-500 text-green-50 font-bold py-2 px-4 rounded cursor-not-allowed"
-          >
+          <button className="w-full bg-green-500 text-green-50 font-bold py-2 px-4 rounded cursor-not-allowed">
             In Your Collection
           </button>
         )}

@@ -9,11 +9,21 @@ export const SearchForGame = () => {
     navigate(`/boardgames/${value ? value.toString() : ""}`)
   }
 
+  const handleKeyDown = (key: string) => 
+  {
+    console.log(key)
+    if(key == "Enter" || key == "Return")
+    {
+      handleClick()
+    }
+  }
+
   return (
     <>
       <input
         value={value}
         onInput={(e) => setValue(e.currentTarget.value)}
+        onKeyDown={(e) => handleKeyDown(e.key)}
         type="text"
         placeholder="Search board games..."
         className="w-full md:w-1/2 p-3 border bg-swhite-50 text-swhite-800 border-swhite-300 rounded-l-lg focus:outline-none focus:border-bgst-500"

@@ -21,18 +21,25 @@ export const ViewCollection = () => {
   return (
     <>
       <div className="max-w-5xl mx-auto my-10 px-4">
-        <h1 className="text-4xl font-bold text-darkness-800 text-center mb-8">
-          Your Board Game Collection
-        </h1>
-        {!collectionDoesntExist && (
-          <p className="text-darkness-600 text-center mb-12">
-            Explore all your collected games in one place! <br></br> Want to
-            choose a random game? Click{" "}
-            <Link to="/random-collection-game" className="underline">
-              Here
-            </Link>
-          </p>
-        )}
+        <header className="flex justify-center mb-8">
+          <h1 className="text-4xl font-extrabold text-center text-darkness-800">
+            Your board game collection
+          </h1>
+          <div className="ml-auto">
+            <div className="ml-auto flex flex-row gap-3">
+              <div className="flex flex-row items-center relative">
+                {!collectionDoesntExist && (
+                  <Link
+                    to="/random-collection-game"
+                    className="bg-bgst-50 text-bgst-600 py-2 px-6 text-sm font-medium rounded-md shadow-md transition hover:bg-bgst-100 box-border"
+                  >
+                    Random Game
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </header>
 
         {!collectionDoesntExist && (
           <div

@@ -16,7 +16,7 @@ export const SelectOrder = ({controller} : {controller: SearchRequestController}
       >
         <option value="0">A-Z</option>
         <option value="1">Z-A</option>
-        <option value="2">Release Date</option>
+        <option value="2">Release Date (Desc)</option>
       </select>
     </div>
   );

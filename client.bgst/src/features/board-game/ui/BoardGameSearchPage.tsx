@@ -32,6 +32,8 @@ export const BoardGameSearchPage = () => {
       initialPageParam: 0,
     });
 
+  const games = data?.pages?.flatMap((page) => page.data)
+
   return (
     <div className="flex min-h-screen bg-swhite-100 p-6">
       <SidebarFilter controller={searchRequestController} />
@@ -40,22 +42,24 @@ export const BoardGameSearchPage = () => {
         <SearchBar controller={searchRequestController} />
 
         <div className="flex justify-around mb-4">
-          <SmallFilter controller={searchRequestController}/> 
+          <SmallFilter controller={searchRequestController} />
           <div className="ml-auto">
-
-          <SelectOrder controller={searchRequestController} />
+            <SelectOrder controller={searchRequestController} />
           </div>
         </div>
 
         {isLoading && <p>Loading...</p>}
         {isError && <p>Error fetching data.</p>}
         <div className="grid xl:grid-cols-2 xxl:grid-cols-3 grid-cols-1 gap-4">
-          {data?.pages
-            ?.flatMap((page) => page.data)
-            .map((boardGame, index) => (
-              <BoardGameCard key={index} boardGame={boardGame}/>
+          {games?.map((boardGame, index) => (
+              <BoardGameCard key={index} boardGame={boardGame} />
             ))}
         </div>
+        {games?.length == 0 && (
+          <div className="flex justify-center items-center">
+            No games found under that query
+          </div>
+        )}
 
         {hasNextPage && (
           <button

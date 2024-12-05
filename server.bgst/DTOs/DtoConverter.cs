@@ -45,19 +45,21 @@ public static class DtoConverter
         };
     }
 
-    public static UserDto ToPrivateUserDto(this BgstUser user){
+    public static UserDto ToPrivateUserDto(this BgstUser user)
+    {
         return new UserDto
-            {
-                Username = user.Username,
-                ImageUrl = user.Imageurl,
-            };
+        {
+            Username = user.Username,
+            ImageUrl = user.Imageurl,
+            Id = user.Id
+        };
     }
 
     public static FriendDto ToFriendDto(this Friend friend, int id)
     {
         UserDto user;
 
-        if(friend.BgstUser1Id == id)
+        if (friend.BgstUser1Id == id)
         {
             user = friend.BgstUser2!.ToPrivateUserDto();
         }
@@ -66,7 +68,8 @@ public static class DtoConverter
             user = friend.BgstUser1!.ToPrivateUserDto();
         }
 
-        return new FriendDto{
+        return new FriendDto
+        {
             Id = friend.Id,
             DateAccepted = friend.DateAccepted,
             User = user
@@ -77,7 +80,7 @@ public static class DtoConverter
     {
         UserDto user;
 
-        if(friendRequest.BgstUser1Id == id)
+        if (friendRequest.BgstUser1Id == id)
         {
             user = friendRequest.BgstUser2!.ToPrivateUserDto();
         }
@@ -96,7 +99,8 @@ public static class DtoConverter
 
     public static PlayedGameDTO ToPlayedGameDto(this UserPlayedGame game)
     {
-        PlayedGameDTO playedGame = new PlayedGameDTO{
+        PlayedGameDTO playedGame = new PlayedGameDTO
+        {
             PlayedDate = $"{game?.PlayedGame?.DatePlayed?.Year}-{game?.PlayedGame?.DatePlayed?.Month}-{game?.PlayedGame?.DatePlayed?.Day}",
             Rank = game?.EndRank,
             Score = game?.Points,

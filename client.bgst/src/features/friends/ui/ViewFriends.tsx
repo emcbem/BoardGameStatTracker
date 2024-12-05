@@ -15,7 +15,7 @@ export const ViewFriends = () => {
   );
 
   const [search, setSearch] = useState<string>("");
-
+console.log(user)
   const friendModalController = useSendFriendRequestModal();
   const friendsDontExist =
     userFriend.data && userFriend.data.friends.length == 0;
@@ -25,8 +25,10 @@ export const ViewFriends = () => {
       <div className="min-h-screen p-8">
         <header className="flex items-center mb-8">
           <h1 className="text-4xl font-extrabold text-darkness-800">
-            My Friends
+            My Friends 
           </h1>
+          
+
           <div className="ml-auto flex flex-row gap-3">
             <div className="flex flex-row items-center relative">
               {userFriend.data?.friendRequests &&
