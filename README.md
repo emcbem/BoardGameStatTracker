@@ -35,11 +35,10 @@ To complete this project there are some main task that will need to be completed
 - [X] Able to add games into collection 
 - [X] Able to input a "play" of a board game
 - [X] Able to tie other users to a "play" of a boardgame. 
-- [ ] Stats for how well you play a game are in the specific game page
+- [X] Stats for how well you play a game are in the specific game page
 - [X] Only able to tie users to a "play" of a board game if they are friends
 - [X] Toast setup to display errors and certain success messages
-- [ ] Webhook to have popups show up when someone sends a friend request
-- [ ] Page to choose a random game from your collection.
+- [X] Page to choose a random game from your collection.
 - [X] Page to play and instance of a game
 - [X] Page to view collection of games
 - [X] Page to view a specific game
@@ -231,8 +230,7 @@ To complete this project there are some main task that will need to be completed
 
 #### To-Do Items 
 
-- [ ] Webhook to have popups show up when someone sends a friend request
-- [ ] Touch-ups
+- [X] Touch-ups
 
 #### Rubric Items Hit
 
