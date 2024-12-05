@@ -40,7 +40,7 @@ public class Tests
 			new TestCaseData(new List<testGame> { new testGame(10, 15), new testGame(15, 30) }, 10, 30, 0, 100, 2, new List<string>() { "Test 1", "Test 2" }),
 			new TestCaseData(new List<testGame> { new testGame(2 , 4 ), new testGame(2 , 5 ) }, 0, 100, 1, 5, 2, new List<string>() { "Test 1", "Test 2" }),
 			new TestCaseData(new List<testGame> { new testGame(2 , 4 ), new testGame(2 , 5 ) }, 0, 100, 3, 5, 0, new List<string>() { }),
-			new TestCaseData(new List<testGame> { new testGame(2 , 4 ), new testGame(2 , 5 ) }, 0, 0, 0, 0, 10, new List<string>() { "Test 1" }),
+			new TestCaseData(new List<testGame> { new testGame(2 , 4 ), new testGame(2 , 5 ) }, 0, 0, 0, 0, 0, new List<string>() { "Test 1" }),
 		};
 
         foreach (var testCase in testCases)

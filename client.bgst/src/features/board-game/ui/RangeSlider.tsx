@@ -54,7 +54,7 @@ const RangeSlider = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [minValue, maxValue, title]);
 
-  
+
 
   return (
     <>
@@ -79,6 +79,15 @@ const RangeSlider = ({
             style={{ left: `${getPercentage(minValue, min, max)}%` }}
             onMouseDown={() => setIsDraggingMin(true)}
           ></div>
+
+
+
+
+
+
+
+
+
 
           <div
             className="absolute w-4 h-4 bg-bgst-500 rounded-full cursor-pointer transform -translate-x-1/2 top-1/2 -translate-y-1/2 hover:size-6 transition-all"
