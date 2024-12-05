@@ -11,7 +11,6 @@ export const RandomGamePage = () => {
 
   return (
     <div className="flex flex-col items-center w-full from-bgst-400 to-bgst-700  min-h-screen py-10">
-      {/* Header Section */}
       <div className="mb-8 text-center">
         <div className="flex flex-row items-center gap-2">
         <Dice/>
@@ -20,7 +19,6 @@ export const RandomGamePage = () => {
         <p className="text-lg mt-2">Find your next board game adventure with a spin of the wheel.</p>
       </div>
 
-      {/* Slot Machine Component */}
       <div className="">
 
       <SlotMachine
@@ -28,7 +26,6 @@ export const RandomGamePage = () => {
         />
         </div>
 
-      {/* Footer or Call-to-Action */}
       <div className="mt-10">
         <p className="text-sm italic">
           Need more games? Update your collection to get new recommendations!

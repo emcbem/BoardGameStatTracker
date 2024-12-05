@@ -25,7 +25,6 @@ export const Pages = () => {
         <Route path="/play/:boardgameId" element={<PlayGame />}/>
         <Route path="/random-collection-game" element={<RandomGamePage/>}/>
         <Route path="/stats/:boardGameId" element={<GameStatsPage/>}/>
-
     </Routes>
   )
 }

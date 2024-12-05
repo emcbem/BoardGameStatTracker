@@ -54,6 +54,8 @@ const RangeSlider = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [minValue, maxValue, title]);
 
+  
+
   return (
     <>
       <h1 className="text-md mb-4">{title}</h1>
