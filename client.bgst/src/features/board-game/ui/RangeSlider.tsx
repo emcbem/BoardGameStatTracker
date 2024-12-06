@@ -80,15 +80,6 @@ const RangeSlider = ({
             onMouseDown={() => setIsDraggingMin(true)}
           ></div>
 
-
-
-
-
-
-
-
-
-
           <div
             className="absolute w-4 h-4 bg-bgst-500 rounded-full cursor-pointer transform -translate-x-1/2 top-1/2 -translate-y-1/2 hover:size-6 transition-all"
             style={{ left: `${getPercentage(maxValue, min, max)}%` }}

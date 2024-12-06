@@ -14,7 +14,6 @@ export const useAddGameToCollection = (id_token: string) =>
         },
         onError: () => {
             toast.error("Unable to add game to collection. Please try again later")
-
         }
     })
 }

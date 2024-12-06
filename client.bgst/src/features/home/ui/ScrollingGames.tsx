@@ -13,7 +13,7 @@ export const ScrollingGames = () => {
         >
           {data &&
             data.map((item) => (
-              <div key={item.id} className="flex-shrink-0 bg-swhite-300 py-3 pr-3">
+              <div key={item.id} className="flex-shrink-0  bg-swhite-300 py-3 pr-3">
                 <div className="bg-swhite-200 p-6 rounded-lg shadow-md text-center">
                   <BoardGameScrollCard boardGame={item} />
                 </div>

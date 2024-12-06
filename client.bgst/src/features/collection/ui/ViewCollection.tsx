@@ -23,7 +23,7 @@ export const ViewCollection = () => {
       <div className="max-w-5xl mx-auto my-10 px-4">
         <header className="flex justify-center mb-8">
           <h1 className="text-4xl font-extrabold text-center text-darkness-800">
-            Your board game collection
+            Collection
           </h1>
           <div className="ml-auto">
             <div className="ml-auto flex flex-row gap-3">

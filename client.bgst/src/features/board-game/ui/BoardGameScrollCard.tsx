@@ -6,7 +6,7 @@ export const BoardGameScrollCard = ({ boardGame }: { boardGame: BoardGame }) => 
   return (
     <Link className="w-[500px]" to={`/view-boardgame/${boardGame.id}`} >
       <div className="flex items-center justify-center ">
-        <div className="w-auto">
+        <div className="min-w-[500px] max-w-[500px]  flex justify-center">
           <img
             src={boardGame.imageUrl}
             alt={boardGame.title}
