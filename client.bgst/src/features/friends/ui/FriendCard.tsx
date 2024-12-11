@@ -8,7 +8,7 @@ const FriendCard = ({ friend }: { friend: Friend }) => {
           alt={`${friend.user.username}'s profile`}
           className="w-24 h-24 rounded-full shadow-md mb-4"
         />
-        <h2 className="text-xl font-semibold truncate text-swhite-950 mb-2">
+        <h2 className="text-xl font-semibold w-full truncate text-swhite-950 mb-2">
           {friend.user.username}
         </h2>
         <p className="text-sm text-swhite-500 ">
