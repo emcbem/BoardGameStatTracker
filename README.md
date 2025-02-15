@@ -1,250 +1,57 @@
 # BoardGameStatTracker
 
 ## Elevator Pitch
-The main idea is a way to keep track of all the times I play board games with my fiance.  
-I want to know who wins the most for specific games.  
-I want to be able to pick a random game to play based on a criteria that I specify.  
-I also want to make it so that you can link other users to an instance of a board game getting played.  
-So you can keep other users updated on games you played with them.  
+Ever argued over who wins the most at board games?  
+BoardGameStatTracker keeps score so you don’t have to!  
+Track your plays, analyze stats, and even let chance decide your next game night pick.  
+Plus, link up with friends to see who the real champion is!    
 
 ## Creator
 - Ethan
 
 ## Features
-- Board games from api in personal database.
-- Keep track of collection of games.
-- View statistics of board games you have played.
-- Page to get a random game to play.
-- Keep track with friends
+✅ Track Your Collection – Store board games from an API in a personal database.  
+📊 View Stats – Analyze your win rates and performance over time.  
+🎲 Random Game Picker – Let fate decide your next board game!  
+👥 Play With Friends – Link users to a game session and track winners.
 
-## New problems i have to face
-- Showing off graphs in htmls
+## New problems I have to face
+- Showing off graphs in html
 - Tying users to an instance of a board game getting played, and doing it while keeping users data secure
+- Making an app for my fiance (the scariest product owner)
 
-### Check-Ins
+## Showcasing the app
 
+https://github.com/user-attachments/assets/d7cf64fa-5221-4ebc-801d-f59d5337dd89  
 
-To complete this project there are some main task that will need to be completed. Here is the list of all parts along with the plan of when to complete them. 
+--- 
+Home Page Developer thoughts
+---
+- Designing a home page can be rough, The original home page actually ended up staying in the final product as the about us page. As the design of it did not feel good enough to be the page you see every time you come onto the app. The current home page actually was being developed to be the game search page but then got slowly revamped to be the true home page.
+- As I was getting some user testing done on this page I realized that I had made a huuuge mistake with my home page. I had a search bar that when enter got hit, wouldn't activate. It seems so obvious in hindsight, but that was a fun little quirk of development.
 
-- [X] Kubernetes Deployment
-- [X] Linting before deployment
-- [X] Testing before deployment
-- [X] User authorization and authentication
-- [X] Database design to satisfy requierments 
-- [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
-- [X] Able to add games into collection 
-- [X] Able to input a "play" of a board game
-- [X] Able to tie other users to a "play" of a boardgame. 
-- [X] Stats for how well you play a game are in the specific game page
-- [X] Only able to tie users to a "play" of a board game if they are friends
-- [X] Toast setup to display errors and certain success messages
-- [X] Page to choose a random game from your collection.
-- [X] Page to play and instance of a game
-- [X] Page to view collection of games
-- [X] Page to view a specific game
-- [X] Page to view all board games
-- [X] Add friend page
-- [X] View friends page
-- [X] About us page
-- [X] Home page 
+---
 
-#### Things to keep track of all the time while developing
-  - all experiences mobile friendly
-  - 3 instances where elements re-order themselves on smaller screens
-  - Professional, organized and smooth experience
+https://github.com/user-attachments/assets/87ee462b-300f-4880-8523-b97a08f7150b
 
-## Nov 6
+---
+Game Page Developer thoughs
+---
+- Making this page was stressful. Originally when I was making BGST the database did not handle descriptions in games. This is mainly because I got all of my board game data from a kaggle csv. This csv did not have descriptions. So trying to get descriptions became a new pain. Where do I get them? Well I found a tool that may shock some. Content warning advised.
+  
+<img width="724" alt="Screenshot 2025-02-14 at 6 47 10 PM" src="https://github.com/user-attachments/assets/b9889419-6559-44b4-8443-67690d534c29" />
 
-#### To-Do Items 
-- [X] Kubernetes Deployment
-- [X] User authorization and authentication (3/5) [because no way to view user page yet)
-- [X] Database design to satisfy requierments
+- This tool helped me get the descriptions for all of the games I needed. It was a surprisingly useful tool but I struggled heavly to get it to work. However, when it did work, it worked amazing. Shoutouts to Andrea Nand for making such an amazing tool. I can tell a lot of work went into it. 
+- I am not fully happy with the final design that I chose with this page. Mainly because it still feels empty even though I added the descriptions. (You should have seen how empty this page felt without those descriptions. It was unbearable.) But, at the time it was my best work.
 
-#### Rubric Items Hit
+---
 
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- **5/5: Developer type helping (TypeScript)**
-- 0/5: 10+ pages/views via a router
-- **3/5: CI/CD pipeline**
-- 0/5: Tests run in pipeline, pipeline aborts if they fail
-- 0/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- **7/10: Authentication and user account support**
-- **2/5: Authorized pages and public pages**
-
-## Nov 9
-
-#### To-Do Items 
-
-- [X] Linting before deployment
-- [X] Testing before deployment
-- [X] Board Games seeded (hopefully from some board game api, web scrapper otherwise)
-
-#### Rubric Items Hit
-
-- 0/5: Use of Local Storage
-- 0/5: Client-side state stores (e.g., context or React Query)
-- 0/5: Toasts / global notifications or alerts
-- 0/5: Error handling (both on API requests and render errors)
-- 0/5: Network Calls; Read data, Write data, WebSocket
-- 5/5: Developer type helping (TypeScript)
-- 0/5: 10+ pages/views via a router
-- **5/5: CI/CD pipeline**
-- **5/5: Tests run in pipeline, pipeline aborts if they fail**
-- **5/5: Linting in pipeline**
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 7/10: Authentication and user account support
-- 2/5: Authorized pages and public pages
-
-## Nov 13
-
-#### To-Do Items 
-
-- [X] Page to view all board games
-- [X] Toast setup to display errors and certain success messages
-- [X] Home page 
-
-#### Rubric Items Hit
-
-- 0/5: Use of Local Storage
-- **3/5: Client-side state stores (e.g., context or React Query)**
-- **5/5: Toasts / global notifications or alerts**
-- **5/5: Error handling (both on API requests and render errors)**
-- **3/5: Network Calls; Read data, Write data, WebSocket**
-- 5/5: Developer type helping (TypeScript)
-- **2/5: 10+ pages/views via a router**
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- 0/12: 4+ reusable layout components
-- 7/10: Authentication and user account support
-- 2/5: Authorized pages and public pages
-
-## Nov 16
-
-#### To-Do Items 
-
-- [X] Page to view collection of games
-- [X] Page to view a specific game
-- [X] Able to add games into collection
-
-#### Rubric Items Hit
-
-- 0/5: Use of Local Storage
-- 3/5: Client-side state stores (e.g., context or React Query)
-- 5/5: Toasts / global notifications or alerts
-- 5/5: Error handling (both on API requests and render errors)
-- **5/5: Network Calls; Read data, Write data, WebSocket**
-- 5/5: Developer type helping (TypeScript)
-- **3/5: 10+ pages/views via a router**
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- 0/9: 3+ reusable form input components
-- **6/12: 4+ reusable layout components** (Board game components)
-- **10/10: Authentication and user account support** (User collections
-- 2/5: Authorized pages and public pages
-
-## Nov 20
-
-#### To-Do Items 
-
-- [X] Add friend page
-- [X] View friends page
-
-#### Rubric Items Hit
-
-- **5/5: Use of Local Storage** (Store current play of game in local storage, if they refresh, i want it to stay.)
-- **5/5: Client-side state stores (e.g., context or React Query)**
-- 5/5: Toasts / global notifications or alerts
-- 5/5: Error handling (both on API requests and render errors)
-- 5/5: Network Calls; Read data, Write data, WebSocket
-- 5/5: Developer type helping (TypeScript)
-- **4/5: 10+ pages/views via a router**
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- 0/9: 3+ reusable form input components**
-- 6/12: 4+ reusable layout components
-- 10/10: Authentication and user account support
-- **5/5: Authorized pages and public pages**
-
-## Nov 23
-
-#### To-Do Items 
-
-- [X] Able to tie other users to a "play" of a boardgame. 
-- [X] Only able to tie users to a "play" of a board game if they are friends
-- [X] Page to play and instance of a game
-
-#### Rubric Items Hit
-
-- 5/5: Use of Local Storage
-- 5/5: Client-side state stores (e.g., context or React Query)
-- 5/5: Toasts / global notifications or alerts
-- 5/5: Error handling (both on API requests and render errors)
-- 5/5: Network Calls; Read data, Write data, WebSocket
-- 5/5: Developer type helping (TypeScript)
-- 4/5: 10+ pages/views via a router
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- **9/9: 3+ reusable form input components**
-- **12/12: 4+ reusable layout components**
-- 10/10: Authentication and user account support
-- 5/5: Authorized pages and public pages
-
-## Nov 26
-
-#### To-Do Items 
-
-- [X] Page to choose a random game from your collection.
-- [X] Stats for how well you play a game are in the specific game page
+https://github.com/user-attachments/assets/f71d8971-f986-4bc5-b752-cd5696a61ff7
 
 
-#### Rubric Items Hit
 
-- 5/5: Use of Local Storage
-- 5/5: Client-side state stores (e.g., context or React Query)
-- 5/5: Toasts / global notifications or alerts
-- 5/5: Error handling (both on API requests and render errors)
-- 5/5: Network Calls; Read data, Write data, WebSocket
-- 5/5: Developer type helping (TypeScript)
-- **5/5: 10+ pages/views via a router**
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- 9/9: 3+ reusable form input components
-- 12/12: 4+ reusable layout components
-- 10/10: Authentication and user account support
-- 5/5: Authorized pages and public pages
 
-## Dec 4
 
-#### To-Do Items 
 
-- [X] Touch-ups
 
-#### Rubric Items Hit
 
-- 5/5: Use of Local Storage
-- 5/5: Client-side state stores (e.g., context or React Query)
-- 5/5: Toasts / global notifications or alerts
-- 5/5: Error handling (both on API requests and render errors)
-- 5/5: Network Calls; Read data, Write data, WebSocket
-- 5/5: Developer type helping (TypeScript)
-- 5/5: 10+ pages/views via a router
-- 5/5: CI/CD pipeline
-- 5/5: Tests run in pipeline, pipeline aborts if they fail
-- 5/5: Linting in pipeline
-- 9/9: 3+ reusable form input components
-- 12/12: 4+ reusable layout components
-- 10/10: Authentication and user account support
-- 5/5: Authorized pages and public pages
