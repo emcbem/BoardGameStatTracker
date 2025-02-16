@@ -29,9 +29,7 @@ Plus, link up with friends to see who the real champion is!
 </div>
 
 ---
-
 Home Page Developer thoughts
-
 ---
 - Designing a home page can be rough, The original home page actually ended up staying in the final product as the about us page. As the design of it did not feel good enough to be the page you see every time you come onto the app. The current home page actually was being developed to be the game search page but then got slowly revamped to be the true home page.
 - As I was getting some user testing done on this page I realized that I had made a huuuge mistake with my home page. I had a search bar that when enter got hit, wouldn't activate. It seems so obvious in hindsight, but that was a fun little quirk of development.
