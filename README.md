@@ -48,7 +48,7 @@ Game Page Developer thoughs
 - Making this page was stressful. Originally when I was making BGST the database did not handle descriptions in games. This is mainly because I got all of my board game data from a kaggle csv. This csv did not have descriptions. So trying to get descriptions became a new pain. Where do I get them? Well I found a tool that may shock some. Content warning advised.
 
 <div align="center">
-  <img width="724" alt="Screenshot 2025-02-14 at 6 47 10 PM" src="https://github.com/user-attachments/assets/b9889419-6559-44b4-8443-67690d534c29" />
+  <img width="400" src="https://github.com/user-attachments/assets/b9889419-6559-44b4-8443-67690d534c29" />
 </div>
 
 - This tool helped me get the descriptions for all of the games I needed. It was a surprisingly useful tool but I struggled heavly to get it to work. However, when it did work, it worked amazing. Shoutouts to Andrea Nand for making such an amazing tool. I can tell a lot of work went into it. 
