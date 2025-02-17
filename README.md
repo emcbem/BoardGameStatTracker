@@ -20,7 +20,7 @@ Plus, link up with friends to see who the real champion is!
 - Tying users to an instance of a board game getting played, and doing it while keeping users data secure
 - Making an app for my fiance (the scariest product owner)
 
-## Showcasing the app
+# Showcasing the app
 
 <div align="center">
   <video src="https://github.com/user-attachments/assets/244af541-bcda-44e0-91a2-0247c21fb5ab" controls width="600">
