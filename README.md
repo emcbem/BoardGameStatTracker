@@ -43,7 +43,7 @@ Home Page Developer thoughts
 </div>
 
 ---
-Game Page Developer thoughs
+Game Page Developer thoughts
 ---
 - Making this page was stressful. Originally when I was making BGST the database did not handle descriptions in games. This is mainly because I got all of my board game data from a kaggle csv. This csv did not have descriptions. So trying to get descriptions became a new pain. Where do I get them? Well I found a tool that may shock some. Content warning advised.
 
@@ -53,6 +53,13 @@ Game Page Developer thoughs
 
 - This tool helped me get the descriptions for all of the games I needed. It was a surprisingly useful tool but I struggled heavly to get it to work. However, when it did work, it worked amazing. Shoutouts to Andrea Nand for making such an amazing tool. I can tell a lot of work went into it. 
 - I am not fully happy with the final design that I chose with this page. Mainly because it still feels empty even though I added the descriptions. (You should have seen how empty this page felt without those descriptions. It was unbearable.) But, at the time it was my best work.
+
+---
+Game Page Future Features
+---
+
+- Redesign the game page to make better use of the image.
+- Store a longer description of the game in our database, when a more button gets clicked, display the longer description, more button gets changed to less. 
 
 ---
 
